@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d4db99c-15ab-43ad-b736-99a5862c1517" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Java/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CircleArea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sample/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sample/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sample/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sample/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sample/Sample.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sample/src/CircleArea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sample/src/Sample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/hello.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../test/hello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +28,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -77,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614911739760</updated>
-      <workItem from="1614911741036" duration="16000" />
+      <workItem from="1614911741036" duration="610000" />
     </task>
     <servers />
   </component>
