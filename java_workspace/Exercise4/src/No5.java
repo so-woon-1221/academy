@@ -7,9 +7,6 @@ public class No5 {
             for (int k = 0; k < j; k++) {
                 System.out.print("*");
             }
-            for (int k = 0; k < (9 - j) / 2; k++) {
-                System.out.print(" ");
-            }
             System.out.println();
         }
     }
