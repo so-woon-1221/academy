@@ -7,6 +7,9 @@ public class NestedLoop {
             }
             System.out.println();
         }
+        System.out.println();
+        System.out.println("가로세로 바꾸기");
+        System.out.println();
 
         //세로로 한 단씩
         for (int i = 1; i < 10; i++) {
