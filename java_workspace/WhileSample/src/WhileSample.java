@@ -19,6 +19,7 @@ public class WhileSample {
             System.out.println("숫자가 입력되지 않았습니다.");
         } else {
             System.out.println("정수의 개수는 " + count + "개 입니다.");
+            System.out.println("입력하신 수의 합계는 " + sum + "입니다.");
             System.out.println("입력하신 수의 평균은 " + (double) sum / count + "입니다.");
         }
         scanner.close();
