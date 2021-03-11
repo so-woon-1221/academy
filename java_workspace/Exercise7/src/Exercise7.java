@@ -3,6 +3,7 @@ import java.util.Scanner;
 class Mouse {
     String leftButton;
     String rightButton;
+    Scanner scanner;
 
     int x;
     int y;
@@ -12,16 +13,27 @@ class Mouse {
     }
 
     public Mouse(String leftButton, String rightButton) {
+        scanner = new Scanner(System.in);
         this.leftButton = leftButton;
         this.rightButton = rightButton;
     }
 
+    public String mouseMove() {
+        System.out.println(this.toString().split("@")[0] + "를 " + "이동할 좌표를 입력하세요");
+        System.out.print("x 좌표 : ");
+        int newX = scanner.nextInt();
+        System.out.print("y 좌표 : ");
+        int newY = scanner.nextInt();
+
+        return this.toString().split("@")[0] +"의 좌표는 " +"(" + newX + ", " + newY + ")";
+    }
+
     public String mouseMove(int x, int y) {
-        return "(" + x + ", " + y + ")";
+        return this.toString().split("@")[0] +"의 좌표는 " +"(" + x + ", " + y + ")";
     }
 
     public String click() {
-        return "왼쪽 버튼은 " + leftButton + ", " + "오른쪽 버튼은 " + rightButton;
+        return this.toString().split("@")[0] + "의 왼쪽 버튼은 " + leftButton + ", " + "오른쪽 버튼은 " + rightButton;
     }
 }
 
@@ -37,6 +49,7 @@ class WheelMouse extends Mouse {
     public String click() {
         return super.click() + ", 스크롤은 " + scrollWheel;
     }
+
 }
 
 class LaserMouse extends WheelMouse {
@@ -59,16 +72,23 @@ class LaserMouse extends WheelMouse {
 
 public class Exercise7 {
     public static void main(String[] args) {
-        Mouse mouse = new Mouse("Clicked", "NotClicked");
-        System.out.println("mouse를 이동한 좌표는 " + mouse.mouseMove(200, 40));
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("클릭 상태를 지정하세요");
+        System.out.print("왼쪽 : ");
+        String left = scanner.nextLine();
+        System.out.print("오른쪽 : ");
+        String right = scanner.nextLine();
+        Mouse mouse = new Mouse(left, right);
+        System.out.println(mouse.mouseMove());
         System.out.println(mouse.click());
 
         WheelMouse wheelMouse = new WheelMouse("Clicked", "NotClicked", "ScrollUp");
-        System.out.println("wheelMouse를 이동한 위치는 " + wheelMouse.mouseMove(250, 100));
+        System.out.println(wheelMouse.mouseMove());
         System.out.println(wheelMouse.click());
 
         LaserMouse laserMouse = new LaserMouse("Clicked", "NotClicked", "ScrollUp");
-        System.out.println("laserMouse를 이동한 위치는 " + laserMouse.mouseMove(100, 400));
+        System.out.println(laserMouse.mouseMove(100, 400));
         System.out.println(laserMouse.click());
     }
 }
