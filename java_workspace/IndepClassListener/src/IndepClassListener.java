@@ -24,7 +24,6 @@ public class IndepClassListener extends JFrame {
 }
 
 class MyActionListener implements ActionListener {
-
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton button = (JButton) e.getSource();
