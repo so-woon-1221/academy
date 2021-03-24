@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76bb29ae-85fd-4fec-ade0-7d878fb671f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ThreadChatting/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ThreadChatting/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ThreadChatting/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ThreadChatting/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ThreadChatting/src/ChatClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ThreadChatting/src/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatting/ServerEx.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatting/ServerEx.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadChatting/out/production/ThreadChatting/ChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadChatting/out/production/ThreadChatting/ChatServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadChatting/src/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadChatting/src/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadChatting/src/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadChatting/src/ChatServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -19,7 +19,7 @@ public class ChatClient extends JFrame {
     Socket socket;
     Scanner scanner;
 
-    String nick;
+    String nick = "";
 
     public ChatClient() {
         this.setTitle("채팅 - 클라이언");
@@ -30,17 +30,23 @@ public class ChatClient extends JFrame {
         container.setLayout(new BorderLayout());
 
         JToolBar toolBar = new JToolBar();
-        JTextField id = new JTextField(10);
+//        JTextField id = new JTextField(10);
         JButton login = new JButton("로그인");
         login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                nick = id.getText();
-                chatArea.append(nick + "으로 로그인했습니다." + "\n");
-                id.setText("");
+                if (nick.equals("")) {
+                    nick = JOptionPane.showInputDialog("아이디를 입력하세요");
+                    chatArea.append(nick + "으로 로그인했습니다." + "\n");
+                    login.setText(nick);
+                } else {
+                    JOptionPane.showMessageDialog(null, nick + "으로 로그인했습니다.");
+                }
+//                nick = id.getText();
+//                id.setText("");
             }
         });
-        toolBar.add(id);
+//        toolBar.add(id);
         toolBar.add(login);
 
         container.add(toolBar, BorderLayout.NORTH);
@@ -91,7 +97,12 @@ public class ChatClient extends JFrame {
             try {
                 while (true) {
                     String inputMessage = reader.readLine();
-                    chatArea.append(inputMessage + "\n");
+                    if (inputMessage != null) {
+                        chatArea.append(inputMessage + "\n");
+                    } else {
+                        chatArea.append("종료\n");
+                        break;
+                    }
                 }
             } catch (Exception e1) {
                 e1.printStackTrace();

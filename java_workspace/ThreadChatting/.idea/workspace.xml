@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f30f6146-75fc-48be-bd67-eef54205be9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChatClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChatServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Chatting/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatting/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Chatting/out/production/Chatting/ServerEx.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatting/out/production/Chatting/ServerEx.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ThreadChatting/ChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThreadChatting/ChatServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616591787556</updated>
-      <workItem from="1616591788870" duration="5299000" />
+      <workItem from="1616591788870" duration="5638000" />
     </task>
     <servers />
   </component>
