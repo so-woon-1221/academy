@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f30f6146-75fc-48be-bd67-eef54205be9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Chatting/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Chatting/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ThreadChatting/ChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThreadChatting/ChatServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chatting/out/production/Chatting/Client$ReadThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chatting/out/production/Chatting/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chatting/out/production/Chatting/Server$ReadThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Chatting/out/production/Chatting/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -56,21 +59,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ChatClient" />
         <item itemvalue="Application.ChatServer" />
+        <item itemvalue="Application.ChatClient" />
       </list>
     </recent_temporary>
   </component>
@@ -82,7 +74,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616591787556</updated>
-      <workItem from="1616591788870" duration="5638000" />
+      <workItem from="1616591788870" duration="5930000" />
+      <workItem from="1616641883690" duration="63000" />
+      <workItem from="1616654755169" duration="3000" />
     </task>
     <servers />
   </component>
@@ -99,5 +93,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
