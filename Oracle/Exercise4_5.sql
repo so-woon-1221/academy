@@ -1,0 +1,1 @@
+select OWNER, TABLE_NAME from ALL_TABLES;
