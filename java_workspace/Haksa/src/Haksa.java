@@ -90,7 +90,8 @@ public class Haksa extends JFrame {
                         Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
 
                         Statement statement = connection.createStatement();
-                        statement.executeUpdate("insert into STUDENT(id,name,dept) values ('" + number + "','" + name + "','" + department + "')");
+                        statement.executeUpdate("insert into STUDENT(id,name,dept,address) values ('" + number + "','" + name +
+                                "','" + department + "','" + address + "')");
                         ResultSet resultSet = statement.executeQuery("select * from STUDENT");
 
                         taList.setText("");
@@ -98,7 +99,8 @@ public class Haksa extends JFrame {
                             String id = resultSet.getString(1);
                             String name2 = resultSet.getString(2);
                             String dept = resultSet.getString(3);
-                            String list = id + " " + name2 + " " + dept + "\n";
+                            String address2 = resultSet.getString(4);
+                            String list = id + " " + name2 + " " + dept + " " + address2 + "\n";
 
                             taList.append(list);
                         }
@@ -144,7 +146,8 @@ public class Haksa extends JFrame {
                         String id = resultSet.getString(1);
                         String name = resultSet.getString(2);
                         String dept = resultSet.getString(3);
-                        String list = id + " " + name + " " + dept + "\n";
+                        String address = resultSet.getString(4);
+                        String list = id + " " + name + " " + dept + " " + address + "\n";
 
                         taList.append(list);
                     }
@@ -172,7 +175,8 @@ public class Haksa extends JFrame {
                     Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
 
                     Statement statement = connection.createStatement();
-                    statement.executeUpdate("UPDATE STUDENT set name = '" + tfName.getText() + "', dept = '" + tfDepartment.getText() + "' where id = '" + tfId.getText() + "'");
+                    statement.executeUpdate("UPDATE STUDENT set name = '" + tfName.getText() + "', dept = '" + tfDepartment.getText()
+                            + "', address ='" + tfAddress.getText() + "' where id = '" + tfId.getText() + "'");
                     ResultSet resultSet = statement.executeQuery("select * from STUDENT");
 
                     taList.setText("");
@@ -180,7 +184,8 @@ public class Haksa extends JFrame {
                         String id = resultSet.getString(1);
                         String name = resultSet.getString(2);
                         String dept = resultSet.getString(3);
-                        String list = id + " " + name + " " + dept + "\n";
+                        String address = resultSet.getString(4);
+                        String list = id + " " + name + " " + dept + " " + address + "\n";
 
                         taList.append(list);
                     }
@@ -219,7 +224,8 @@ public class Haksa extends JFrame {
                             String id = resultSet.getString(1);
                             String name = resultSet.getString(2);
                             String dept = resultSet.getString(3);
-                            String list = id + " " + name + " " + dept + "\n";
+                            String address = resultSet.getString(4);
+                            String list = id + " " + name + " " + dept + " " + address + "\n";
 
                             taList.append(list);
                         }
