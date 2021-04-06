@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class Haksa extends JFrame {
     JTextField tfId = null;
@@ -79,8 +80,37 @@ public class Haksa extends JFrame {
                 }
 
                 if (errorMessage.equals("")) {
+                    final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
+                    final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+                    final String USER = "ora_user"; //아이디
+                    final String PASS = "hong"; //비밀번호
+
+                    try {
+                        Class.forName(JDBC_DRIVER);
+                        Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                        Statement statement = connection.createStatement();
+                        statement.executeUpdate("insert into STUDENT(id,name,dept) values ('" + number + "','" + name + "','" + department + "')");
+                        ResultSet resultSet = statement.executeQuery("select * from STUDENT");
+
+                        taList.setText("");
+                        while (resultSet.next()) {
+                            String id = resultSet.getString(1);
+                            String name2 = resultSet.getString(2);
+                            String dept = resultSet.getString(3);
+                            String list = id + " " + name2 + " " + dept + "\n";
+
+                            taList.append(list);
+                        }
+
+                        resultSet.close();
+                        statement.close();
+                        connection.close();
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }
+
                     JOptionPane.showMessageDialog(null, "등록되었습니다.", "확인", JOptionPane.PLAIN_MESSAGE);
-                    taList.append(number + " " + name + " " + department + " " + address);
                     tfName.setText("");
                     tfId.setText("");
                     tfDepartment.setText("");
@@ -94,9 +124,74 @@ public class Haksa extends JFrame {
         container.add(insertButton);
 
         selectButton = new JButton("목록");
+        selectButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
+                final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+                final String USER = "ora_user"; //아이디
+                final String PASS = "hong"; //비밀번호
+
+                try {
+                    Class.forName(JDBC_DRIVER);
+                    Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                    Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery("select * from STUDENT");
+
+                    taList.setText("");
+                    while (resultSet.next()) {
+                        String id = resultSet.getString(1);
+                        String name = resultSet.getString(2);
+                        String dept = resultSet.getString(3);
+                        String list = id + " " + name + " " + dept + "\n";
+
+                        taList.append(list);
+                    }
+                    resultSet.close();
+                    statement.close();
+                    connection.close();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
         container.add(selectButton);
 
         updateButton = new JButton("수정");
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
+                final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+                final String USER = "ora_user"; //아이디
+                final String PASS = "hong"; //비밀번호
+
+                try {
+                    Class.forName(JDBC_DRIVER);
+                    Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                    Statement statement = connection.createStatement();
+                    statement.executeUpdate("UPDATE STUDENT set name = '" + tfName.getText() + "', dept = '" + tfDepartment.getText() + "' where id = '" + tfId.getText() + "'");
+                    ResultSet resultSet = statement.executeQuery("select * from STUDENT");
+
+                    taList.setText("");
+                    while (resultSet.next()) {
+                        String id = resultSet.getString(1);
+                        String name = resultSet.getString(2);
+                        String dept = resultSet.getString(3);
+                        String list = id + " " + name + " " + dept + "\n";
+
+                        taList.append(list);
+                    }
+                    resultSet.close();
+                    statement.close();
+                    connection.close();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
         container.add(updateButton);
 
         deleteButton = new JButton("삭제");
@@ -106,7 +201,34 @@ public class Haksa extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int result = JOptionPane.showConfirmDialog(null, "삭제하시겠습니까?", "삭제", JOptionPane.YES_NO_OPTION);
                 if (result == JOptionPane.YES_OPTION) {
-                    //삭제처리
+                    final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
+                    final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+                    final String USER = "ora_user"; //아이디
+                    final String PASS = "hong"; //비밀번호
+
+                    try {
+                        Class.forName(JDBC_DRIVER);
+                        Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                        Statement statement = connection.createStatement();
+                        statement.executeUpdate("DELETE FROM STUDENT where id = '" + tfId.getText() + "'");
+                        ResultSet resultSet = statement.executeQuery("select * from STUDENT");
+
+                        taList.setText("");
+                        while (resultSet.next()) {
+                            String id = resultSet.getString(1);
+                            String name = resultSet.getString(2);
+                            String dept = resultSet.getString(3);
+                            String list = id + " " + name + " " + dept + "\n";
+
+                            taList.append(list);
+                        }
+                        resultSet.close();
+                        statement.close();
+                        connection.close();
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }
                 }
             }
         });

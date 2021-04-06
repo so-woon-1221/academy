@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e58f70-ef59-42e1-b5eb-36b0cc24e202" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Exercise4/.idea/libraries/LibraryTest2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ojdbc6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JdbcPractice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LibraryTest/.idea/libraries/LibraryTest2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Haksa/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Haksa/.idea/libraries/ojdbc6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Haksa/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Haksa/src/Haksa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Haksa/src/Haksa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +82,7 @@
       <updated>1617679134028</updated>
       <workItem from="1617679135718" duration="555000" />
       <workItem from="1617681486213" duration="4106000" />
+      <workItem from="1617688262353" duration="933000" />
     </task>
     <servers />
   </component>
