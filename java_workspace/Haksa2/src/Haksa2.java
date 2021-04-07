@@ -2,10 +2,7 @@ import javax.swing.*;
 import javax.swing.plaf.nimbus.State;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.sql.*;
 
 public class Haksa2 extends JFrame {
@@ -89,10 +86,13 @@ public class Haksa2 extends JFrame {
                 try {
                     Statement statement = connection.createStatement();
                     ResultSet resultSet = statement.executeQuery("SELECT * FROM STUDENT WHERE id = '" + id + "'");
+                    model.setNumRows(0);
                     while (resultSet.next()) {
                         name = resultSet.getString(2);
                         dept = resultSet.getString(3);
                         address = resultSet.getString(4);
+                        String[] data = {id, name, dept, address};
+                        model.addRow(data);
                     }
                     tfName.setText(name);
                     tfDepartment.setText(dept);
@@ -123,6 +123,18 @@ public class Haksa2 extends JFrame {
 //        taList = new JTextArea(10, 28);
 //        taList.setText(DESCRIPTION);
         table.setPreferredScrollableViewportSize(new Dimension(330, 200));
+        table.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JTable clicked = (JTable) e.getSource();
+                int row = clicked.getSelectedRow();
+                DefaultTableModel nowModel = (DefaultTableModel) clicked.getModel();
+                tfId.setText((String) nowModel.getValueAt(row,0));
+                tfName.setText((String) nowModel.getValueAt(row,1));
+                tfDepartment.setText((String) nowModel.getValueAt(row,2));
+                tfAddress.setText((String) nowModel.getValueAt(row,3));
+            }
+        });
         container.add(new JScrollPane(table));
 
         insertButton = new JButton("등록");
