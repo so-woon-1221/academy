@@ -1,10 +1,16 @@
 import javax.swing.*;
+import javax.swing.plaf.nimbus.State;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.*;
 
 public class Haksa extends JFrame {
+    final String DESCRIPTION = "학번\t이름\t학과\t주소\n" +
+            "-----\t-----\t-----\t-----\n";
+
     JTextField tfId = null;
     JTextField tfName = null;
     JTextField tfDepartment = null;
@@ -17,10 +23,37 @@ public class Haksa extends JFrame {
     JButton updateButton = null;
     JButton deleteButton = null;
     JButton loginButton;
+    JButton searchButton;
 
     Boolean isLogin = false;
 
+    Connection connection = null;
+
     public Haksa() {
+        final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
+        final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+        final String USER = "ora_user"; //아이디
+        final String PASS = "hong"; //비밀번호
+        try {
+            Class.forName(JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URL, USER, PASS);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    if (connection != null) {
+                        connection.close();
+                    }
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
+
         this.setTitle("학사관리");
         this.setDefaultCloseOperation(3);
 
@@ -37,9 +70,37 @@ public class Haksa extends JFrame {
 
         c.add(toolBar, BorderLayout.NORTH);
 
-        tfId = new JTextField(25);
+        tfId = new JTextField(18);
         container.add(new JLabel("학번"));
         container.add(tfId);
+
+        searchButton = new JButton("검색");
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String id = tfId.getText();
+                String name = "";
+                String dept = "";
+                String address = "";
+                try {
+                    Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery("SELECT * FROM STUDENT WHERE id = '" + id + "'");
+                    while (resultSet.next()) {
+                        name = resultSet.getString(2);
+                        dept = resultSet.getString(3);
+                        address = resultSet.getString(4);
+                    }
+                    tfName.setText(name);
+                    tfDepartment.setText(dept);
+                    tfAddress.setText(address);
+                    resultSet.close();
+                    statement.close();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
+        container.add(searchButton);
 
         container.add(new JLabel("이름"));
         tfName = new JTextField(25);
@@ -53,7 +114,9 @@ public class Haksa extends JFrame {
         tfAddress = new JTextField(25);
         container.add(tfAddress);
 
+
         taList = new JTextArea(10, 28);
+        taList.setText(DESCRIPTION);
         container.add(new JScrollPane(taList));
 
         insertButton = new JButton("등록");
@@ -66,11 +129,11 @@ public class Haksa extends JFrame {
                 String address = tfAddress.getText();
 
                 String errorMessage = "";
-                if (name.equals("")) {
-                    errorMessage += "[이름] ";
-                }
                 if (number.equals("")) {
                     errorMessage += "[학번] ";
+                }
+                if (name.equals("")) {
+                    errorMessage += "[이름] ";
                 }
                 if (department.equals("")) {
                     errorMessage += "[학과] ";
@@ -78,47 +141,42 @@ public class Haksa extends JFrame {
                 if (address.equals("")) {
                     errorMessage += "[주소] ";
                 }
+                if (number.length() != 7 && errorMessage.equals("")) {
+                    errorMessage += "학번은 7자리입니다.";
+                } else if (number.length() != 7) {
+                    errorMessage += "빈칸입니다.\n학번은 7자리입니다.";
+                }
 
                 if (errorMessage.equals("")) {
-                    final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-                    final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
-                    final String USER = "ora_user"; //아이디
-                    final String PASS = "hong"; //비밀번호
-
                     try {
-                        Class.forName(JDBC_DRIVER);
-                        Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-
                         Statement statement = connection.createStatement();
                         statement.executeUpdate("insert into STUDENT(id,name,dept,address) values ('" + number + "','" + name +
                                 "','" + department + "','" + address + "')");
                         ResultSet resultSet = statement.executeQuery("select * from STUDENT");
 
-                        taList.setText("");
+                        taList.setText(DESCRIPTION);
                         while (resultSet.next()) {
                             String id = resultSet.getString(1);
                             String name2 = resultSet.getString(2);
                             String dept = resultSet.getString(3);
                             String address2 = resultSet.getString(4);
-                            String list = id + " " + name2 + " " + dept + " " + address2 + "\n";
+                            String list = id + "\t" + name2 + "\t" + dept + "\t" + address2 + "\n";
 
                             taList.append(list);
                         }
 
+                        JOptionPane.showMessageDialog(null, "등록되었습니다.", "확인", JOptionPane.PLAIN_MESSAGE);
+                        tfName.setText("");
+                        tfId.setText("");
+                        tfDepartment.setText("");
+                        tfAddress.setText("");
+
                         resultSet.close();
                         statement.close();
-                        connection.close();
                     } catch (Exception exception) {
                         exception.printStackTrace();
                     }
-
-                    JOptionPane.showMessageDialog(null, "등록되었습니다.", "확인", JOptionPane.PLAIN_MESSAGE);
-                    tfName.setText("");
-                    tfId.setText("");
-                    tfDepartment.setText("");
-                    tfAddress.setText("");
                 } else {
-                    errorMessage += "빈칸입니다.";
                     JOptionPane.showMessageDialog(null, errorMessage, "경고", JOptionPane.ERROR_MESSAGE);
                 }
             }
@@ -129,31 +187,22 @@ public class Haksa extends JFrame {
         selectButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-                final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
-                final String USER = "ora_user"; //아이디
-                final String PASS = "hong"; //비밀번호
-
                 try {
-                    Class.forName(JDBC_DRIVER);
-                    Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-
                     Statement statement = connection.createStatement();
                     ResultSet resultSet = statement.executeQuery("select * from STUDENT");
 
-                    taList.setText("");
+                    taList.setText(DESCRIPTION);
                     while (resultSet.next()) {
                         String id = resultSet.getString(1);
                         String name = resultSet.getString(2);
                         String dept = resultSet.getString(3);
                         String address = resultSet.getString(4);
-                        String list = id + " " + name + " " + dept + " " + address + "\n";
+                        String list = id + "\t" + name + "\t" + dept + "\t" + address + "\n";
 
                         taList.append(list);
                     }
                     resultSet.close();
                     statement.close();
-                    connection.close();
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
@@ -165,33 +214,24 @@ public class Haksa extends JFrame {
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-                final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
-                final String USER = "ora_user"; //아이디
-                final String PASS = "hong"; //비밀번호
-
                 try {
-                    Class.forName(JDBC_DRIVER);
-                    Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-
                     Statement statement = connection.createStatement();
                     statement.executeUpdate("UPDATE STUDENT set name = '" + tfName.getText() + "', dept = '" + tfDepartment.getText()
                             + "', address ='" + tfAddress.getText() + "' where id = '" + tfId.getText() + "'");
                     ResultSet resultSet = statement.executeQuery("select * from STUDENT");
 
-                    taList.setText("");
+                    taList.setText(DESCRIPTION);
                     while (resultSet.next()) {
                         String id = resultSet.getString(1);
                         String name = resultSet.getString(2);
                         String dept = resultSet.getString(3);
                         String address = resultSet.getString(4);
-                        String list = id + " " + name + " " + dept + " " + address + "\n";
+                        String list = id + "\t" + name + "\t" + dept + "\t" + address + "\n";
 
                         taList.append(list);
                     }
                     resultSet.close();
                     statement.close();
-                    connection.close();
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
@@ -206,32 +246,23 @@ public class Haksa extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int result = JOptionPane.showConfirmDialog(null, "삭제하시겠습니까?", "삭제", JOptionPane.YES_NO_OPTION);
                 if (result == JOptionPane.YES_OPTION) {
-                    final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-                    final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
-                    final String USER = "ora_user"; //아이디
-                    final String PASS = "hong"; //비밀번호
-
                     try {
-                        Class.forName(JDBC_DRIVER);
-                        Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
-
                         Statement statement = connection.createStatement();
                         statement.executeUpdate("DELETE FROM STUDENT where id = '" + tfId.getText() + "'");
                         ResultSet resultSet = statement.executeQuery("select * from STUDENT");
 
-                        taList.setText("");
+                        taList.setText(DESCRIPTION);
                         while (resultSet.next()) {
                             String id = resultSet.getString(1);
                             String name = resultSet.getString(2);
                             String dept = resultSet.getString(3);
                             String address = resultSet.getString(4);
-                            String list = id + " " + name + " " + dept + " " + address + "\n";
+                            String list = id + "\t" + name + "\t" + dept + "\t" + address + "\n";
 
                             taList.append(list);
                         }
                         resultSet.close();
                         statement.close();
-                        connection.close();
                     } catch (Exception exception) {
                         exception.printStackTrace();
                     }
@@ -241,7 +272,7 @@ public class Haksa extends JFrame {
 
         c.add(container, BorderLayout.CENTER);
 
-        this.setSize(350, 500);
+        this.setSize(350, 400);
         this.setVisible(true);
     }
 
