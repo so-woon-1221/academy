@@ -56,6 +56,17 @@ public class Haksa3 extends JFrame {
             this.setSize(350, 450);
         });
 
+        JMenuItem book_list = new JMenuItem("도서 목록");
+        m_book.add(book_list);
+        book_list.addActionListener(e -> {
+            c.removeAll();
+            c.revalidate();
+            c.repaint();
+            c.add(new Booklist(connection));
+            c.setLayout(null);
+            this.setSize(490, 400);
+        });
+
         JMenuItem rent_list = new JMenuItem("대출 목록");
         m_book.add(rent_list);
         rent_list.addActionListener(e -> {
