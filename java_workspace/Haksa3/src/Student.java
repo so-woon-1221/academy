@@ -1,11 +1,9 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -28,9 +26,8 @@ public class Student extends JPanel {
     Connection connection = null;
 
     public Student(Connection connection) {
-        System.out.println("들어옴");
-        model = new DefaultTableModel();
         this.connection = connection;
+        model = new DefaultTableModel();
 
         tfId = new JTextField(18);
         this.add(new JLabel("학번"));
@@ -43,27 +40,35 @@ public class Student extends JPanel {
             public void actionPerformed(ActionEvent e) {
 
                 String id = tfId.getText();
-                String name = "";
-                String dept = "";
-                String address = "";
+                String bookName = "";
+                String rentDate = "";
+                String rentNow = "";
                 try {
                     Statement statement = connection.createStatement();
-                    ResultSet resultSet = statement.executeQuery("SELECT * FROM STUDENT WHERE id = '" + id + "'");
+                    ResultSet resultSet = statement.executeQuery("select BB.TITLE, BR.RENTDATE\n" +
+                            "from BOOKS BB, BOOKRENT BR, STUDENT ST\n" +
+                            "where ST.ID = BR.STUDENTID and BB.BOOKID = BR.BOOKID and ST.ID='" + id + "'");
                     model.setNumRows(0);
                     while (resultSet.next()) {
-                        name = resultSet.getString(2);
-                        dept = resultSet.getString(3);
-                        address = resultSet.getString(4);
-                        String[] data = {id, name, dept, address};
-                        model.addRow(data);
+                        bookName = resultSet.getString(1);
+                        rentDate = resultSet.getString(2);
+                        rentNow = bookName + " " + rentDate + "\n";
                     }
-                    tfName.setText(name);
-                    tfDepartment.setText(dept);
-                    tfAddress.setText(address);
+                    JDialog rentDialog = new JDialog();
+                    rentDialog.setTitle("하하");
+
+                    JLabel rentLabel = new JLabel(rentNow);
+                    rentDialog.setLayout(new BorderLayout());
+                    rentDialog.add(rentLabel);
+
+                    rentDialog.setSize(300, 300);
+                    rentDialog.setVisible(true);
                     resultSet.close();
                     statement.close();
                 } catch (Exception exception) {
                     exception.printStackTrace();
+                } finally {
+                    listStudent();
                 }
             }
         });
@@ -239,5 +244,32 @@ public class Student extends JPanel {
                 }
             }
         });
+        this.setSize(350, 450);
+        this.setVisible(true);
+
+
+    }
+
+    void listStudent() {
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from STUDENT");
+
+//                    taList.setText(DESCRIPTION);
+            model.setNumRows(0);
+            while (resultSet.next()) {
+                String id = resultSet.getString(1);
+                String name = resultSet.getString(2);
+                String dept = resultSet.getString(3);
+                String address = resultSet.getString(4);
+                String[] data = {id, name, dept, address};
+                model.addRow(data);
+            }
+            resultSet.close();
+            statement.close();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 }
+

@@ -14,11 +14,8 @@ public class BookRent extends JPanel {
 
     String query;
 
-    public BookRent() {
-        final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-        final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
-        final String USER = "ora_user"; //아이디
-        final String PASS = "hong"; //비밀번호
+    public BookRent(Connection connection) {
+        this.connection = connection;
 
         query = "select student.id, student.name, books.title, bookRent.rentDate" +
                 " from  bookRent, student, books" +
@@ -26,8 +23,6 @@ public class BookRent extends JPanel {
                 " and bookRent.bookId=books.bookId";
 
         try {
-            Class.forName(JDBC_DRIVER);
-            connection = DriverManager.getConnection(DB_URL, USER, PASS);
             statement = connection.createStatement();
         } catch (Exception e) {
             e.printStackTrace();

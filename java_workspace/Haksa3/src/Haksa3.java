@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class Haksa3 extends JFrame {
 
-    Connection connection = null;
+    Connection connection;
 
     public Haksa3() {
         final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
@@ -23,12 +23,12 @@ public class Haksa3 extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                try {
-                    if (connection != null) {
+                if (connection != null) {
+                    try {
                         connection.close();
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
                     }
-                } catch (Exception exception) {
-                    exception.printStackTrace();
                 }
             }
         });
@@ -49,7 +49,6 @@ public class Haksa3 extends JFrame {
         JMenuItem mi_list = new JMenuItem("학생 정보");
         m_student.add(mi_list);
         mi_list.addActionListener(e -> {
-            System.out.println("학생");
             c.removeAll();
             c.revalidate();
             c.repaint();
@@ -63,7 +62,7 @@ public class Haksa3 extends JFrame {
             c.removeAll();
             c.revalidate();
             c.repaint();
-            c.add(new BookRent());
+            c.add(new BookRent(connection));
             c.setLayout(null);
             this.setSize(490, 400);
         });
