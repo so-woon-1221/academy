@@ -1,0 +1,20 @@
+h1 {
+  color: red;
+}
+
+.subtitle {
+  color: blue;
+}
+
+#title1 {
+  color: green;
+}
+
+#title2 {
+  color: olive;
+}
+
+i,
+em {
+  color: aqua;
+}
