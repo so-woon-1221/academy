@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout2</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        background-color: gray;
+        width: 100%;
+        padding: 5px 10px 5px;
+      }
+
+      #nav {
+        background-color: mediumturquoise;
+        padding: 10px;
+        width: 100%;
+      }
+
+      #aside {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 100px;
+        width: 250px;
+        height: 800px;
+        background-color: gainsboro;
+        padding-left: 10px;
+        border: 1px solid black;
+        opacity: 0.3;
+      }
+
+      #article {
+        float: left;
+        border: 2px solid rebeccapurple;
+        padding-left: 10px;
+        width: 100px;
+      }
+
+      #footer {
+        clear: both;
+        height: 50px;
+        text-align: center;
+        background-color: gray;
+        padding-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <h1>Header</h1>
+    </header>
+    <nav id="nav">Nav1 | Nav2</nav>
+    <aside id="aside">
+      <ul>
+        <li>Column1</li>
+        <li>Column2</li>
+        <li>Column3</li>
+      </ul>
+    </aside>
+    <article id="article">
+      <h3>Info1</h3>
+      Information of Nav1
+    </article>
+    <footer id="footer">Footer</footer>
+  </body>
+</html>
