@@ -1,0 +1,134 @@
+* {
+    font-family: D2Coding;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: papayawhip;
+}
+
+#header {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    line-height: 1.2;
+    width: 80%;
+    margin: auto;
+}
+
+#header h3 {
+    color: gray;
+}
+
+#middle {
+    box-shadow: 2px 2px 1px gray;
+    /*border: 1px solid black;*/
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#menu {
+    padding: 20px 10px 15px;
+    /*box-shadow: 1px 1px 0 1px gray;*/
+}
+
+#menu ul {
+    background-color: dodgerblue;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+#menu ul li {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu ul li a:hover {
+    color: black;
+}
+
+#contents {
+    display: flex;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.left, .right {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 20%;
+}
+
+.left p, .right p {
+    background-color: indianred;
+    color: white;
+    padding: 10px;
+}
+
+.left a {
+    display: block;
+    text-decoration: none;
+    color: dodgerblue;
+    padding: 5px 10px;
+}
+
+.tagWrapper {
+    padding: 20px 10px;
+}
+
+.right a {
+    text-decoration: none;
+    margin-right: 5px;
+    color: black;
+    display: inline-block;
+}
+
+#article {
+    width: 60%;
+    /*align-items: center;*/
+}
+
+
+#article h3 {
+    background-color: indianred;
+    color: white;
+    padding: 10px;
+}
+
+#article p {
+    padding: 10px 10px;
+}
+
+.image {
+    max-width: 90%;
+    padding: 10px 10px;
+    margin: auto;
+}
+
+#article img {
+    border: 4px solid gray;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#footer {
+    padding: 20px 0;
+}
+
+#footer p {
+    color: gray;
+    text-align: center;
+
+}
+
+
+
+

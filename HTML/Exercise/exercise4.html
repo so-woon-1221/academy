@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXERCISE4</title>
+
+    <link rel="stylesheet" href="../CSS/exercise/exercise4.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <h1>Your Website</h1>
+        <h3>Super slogan for super site</h3>
+    </div>
+    <div id="middle">
+        <div id="menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">PHOTOS</a></li>
+                <li><a href="#">BLOGS</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">HELP</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="left">
+                <div>
+                    <p>Categories</p>
+                    <a href="#">World Politics</a>
+                    <a href="#">Europe Sport</a>
+                    <a href="#">Networking</a>
+                    <a href="#">Nature - Africa</a>
+                    <a href="#">SuperCool</a>
+                    <a href="#">Last Category</a>
+                </div>
+                <div>
+                    <p>Archives</p>
+                    <a href="#">January 2007</a>
+                    <a href="#">February 2007</a>
+                    <a href="#">March 2007</a>
+                    <a href="#">April 2007</a>
+                    <a href="#">May 2007</a>
+                    <a href="#">June 2007</a>
+                    <a href="#">July 2007</a>
+                    <a href="#">August 2007</a>
+                    <a href="#">September 2007</a>
+                    <a href="#">October 2007</a>
+                    <a href="#">November 2007</a>
+                    <a href="#">December 2007</a>
+                </div>
+            </div>
+            <div id="article">
+                <h3>License and terms of use</h3>
+                <p>
+                    Simpatico is a CSS template that is free and fully standards compliant. Free CSS templates designed
+                    this
+                    template. This template is allowed for all uses, including commercial use, as it is released under
+                    the
+                    Creative Commons Attributions 2.5 license. The only stipulation to the use of this free template is
+                    that
+                    the links appearing in the footer remain intact. Beyond that, simply enjoy and have fun with it!
+                </p>
+                <p>
+                    Donec nulla. Aenean eu augue ac nisl tincidunt rutrum. Proin erat justo, pharetra eget, posuere at,
+                    malesuada et, nulla. Donec pretium nibh sed est faucibus suscipit. Nunc nisi. Nullam vehicula. In
+                    ipsum
+                    lorem, bibendum sed, consectetuer et, gravida id, erat. Ut imperdiet, leo vel condimentum faucibus,
+                    risus justo feugiat purus, vitae congue nulla diam non urna.
+                </p>
+                <div class="image">
+                    <img src="../img1.jpg">
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec porta. Sed porttitor, tellus vitae
+                    tincidunt feugiat, sem sapien pellentesque justo, vitae pretium justo risus id nunc. Mauris elit
+                    metus,
+                    varius sit amet, rhoncus id, malesuada eget, tortor. Aenean eu augue ac nisl tincidunt rutrum. Proin
+                    erat justo, pharetra eget, posuere at, malesuada et, nulla.
+                </p>
+
+                <p>
+                    Donec pretium nibh sed est faucibus suscipit. Nunc nisi. Nullam vehicula. In ipsum lorem, bibendum
+                    sed,
+                    consectetuer et, gravida id, erat. Ut imperdiet, leo vel condimentum faucibus, risus justo feugiat
+                    purus, vitae congue nulla diam non urna.
+                </p>
+            </div>
+            <div class="right" id="tag">
+                <p>Tag Cloud</p>
+                <div class="tagWrapper" id="tagWrapper">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>Designed by Sowoon. Thanks to custom web design</p>
+    </div>
+</div>
+
+<script>
+    let tagWrapper = document.getElementById('tagWrapper');
+    for (let i = 0; i < 30; i++) {
+        let tag = document.createElement('a');
+        tag.innerHTML = 'tag' + (i + 1);
+        tag.href = '#';
+        tagWrapper.append(tag);
+    }
+
+    let tags = document.getElementById('tag');
+    for (let tag of tags.querySelectorAll('a')) {
+        let random = Math.round(Math.random() * 3);
+        switch (random) {
+            case 0:
+                tag.style.color = 'red';
+                tag.style.fontSize = 1.4 + 'rem';
+                break;
+            case 1:
+                tag.style.color = 'blue';
+                tag.style.fontSize = 1.8 + 'rem';
+                break;
+            case 2:
+                tag.style.color = 'green';
+                tag.style.fontSize = 2.2 + 'rem';
+                tag.style.fontStyle = 'oblique';
+                break;
+        }
+    }
+</script>
+</body>
+</html>
