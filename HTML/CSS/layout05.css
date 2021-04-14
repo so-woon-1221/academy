@@ -9,4 +9,42 @@
   height: 45px;
   background-image: url("../img/mobile/bg.png");
   /*background-color: black;*/
+  position: relative;
+}
+
+#header h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+#menu {
+  position: absolute;
+  left: 5px;
+  top: 7px;
+}
+
+#button {
+  position: absolute;
+  right: 5px;
+  top: 7px;
+}
+
+.menu-item {
+  float: left;
+  width: 25%;
+  background: darkred;
+  height: 40px;
+  line-height: 40px;
+  border-right: 1px solid black;
+  box-sizing: border-box;
+}
+
+#footer {
+  text-align: center;
+  width: 100%;
+  background-color: darkred;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  bottom: 0;
 }
