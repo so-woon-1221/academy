@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" xmlns:data-theme="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화 소개</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #content {
+            padding: 10px;
+            background-color: white;
+        }
+
+        #top {
+            background-color: #00A056;
+            border: none;
+            text-shadow: none;
+            color: #FEFEDA;
+        }
+
+        #bottom {
+            background-color: white;
+            border: none;
+            text-shadow: none;
+        }
+
+        .nav-btn {
+            border: none;
+            background-color: #FEFDF8;
+        }
+
+        .ui-grid-a {
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        .ui-block-a img, .ui-block-b img {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .ui-block-a div, .ui-block-b div {
+            color: #00A056;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ui-block-a p, .ui-block-b p {
+            color: #595959;
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" style="background-color: white;">
+    <div style="background-color: white">
+        <!--        header ---------------------------------------->
+        <div data-role="header" id="top">
+            <h3>소개</h3>
+            <a href="index.html" rel="external" style="background: none; border: none; box-shadow: none">
+                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: #FEFEDA"></i>
+            </a>
+            <!--            <a href="index.html" rel="external">Previous</a>-->
+        </div>
+        <!--        header-->
+        <!--        navigation bar-------------------------------------------------------------->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="desc1.html" rel="external" class="nav-btn" style="background-color: white; color: #707565">줄거리</a>
+                </li>
+                <li><a href="desc2.html" rel="external" class="nav-btn"
+                       style="background-color: #00A056; color: white; text-shadow: none; font-weight: bold">등장인물</a>
+                </li>
+                <li><a href="desc3.html" rel="external" class="nav-btn" style="background-color: white; color: #707565">평점</a>
+                </li>
+            </ul>
+        </div>
+        <!--        navigation bar-->
+        <!--        content------------------------------------------>
+        <div data-role="ui-content" id="content">
+            <h3 style="padding-left: 10px">등장 인물</h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/actor/actor1.jpg" alt="우에노 주리">
+                    <div>우에노 주리</div>
+                    <p>
+                        Juri Ueno <br>
+                        스즈메 역<br>
+                    </p>
+                    <!--                    <img src="img/actor/actor2.jpg" alt="후세 에리">-->
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/actor/actor3.jpg" alt="아오이 유우">
+                    <div>아오이 유우</div>
+                    <p>
+                        Aoi Yu <br>
+                        쿠자쿠 역<br>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/actor/actor2.jpg" alt="호세 에리">
+                    <div>후세 에리</div>
+                    <p>
+                        Fuse Eri <br>
+                        쿠기타니 에츠코 역<br>
+                    </p>
+                    <!--                    <img src="img/actor/actor2.jpg" alt="후세 에리">-->
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/actor/actor4.jpg" alt="이부 마사토">
+                    <div>이부 마사토</div>
+                    <p>
+                        Masato Ibu <br>
+                        나카니시 역<br>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/actor/actor5.jpg" alt="카나메 준">
+                    <div>카나메 준</div>
+                    <p>
+                        Kaname Jun<br>
+                        카토 선배 역<br></p>
+                    <!--                    <img src="img/actor/actor2.jpg" alt="후세 에리">-->
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/actor/actor6.jpg" alt="마츠시게 유타카">
+                    <div>마츠시게 유타카</div>
+                    <p>
+                        Matsushige Yutaka<br>
+                        라면 전문점 아저씨 역<br></p>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/actor/actor7.jpg" alt="누쿠미즈 요이치">
+                    <div>누쿠미즈 요이치</div>
+                    <p>
+                        Yoichi Nukumizu<br>
+                        미용시 아저씨 역<br></p>
+                    <!--                    <img src="img/actor/actor2.jpg" alt="후세 에리">-->
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/actor/actor8.jpg" alt="시마다 큐사쿠">
+                    <div>시마다 큐사쿠</div>
+                    <p>
+                        Kyusaku Shimada<br>
+                        후쿠시마 역<br></p>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/actor/actor9.jpg" alt="마츠오카 슌스케">
+                    <div>마츠오카 슌스케</div>
+                    <p>
+                        Shunsuke Matsuoka<br>
+                        나리야마 역<br></p>
+                    <!--                    <img src="img/actor/actor2.jpg" alt="후세 에리">-->
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/actor/actor10.jpg" alt="미즈하시 켄지">
+                    <div>미즈하시 켄시</div>
+                    <p>
+                        Mizuhashi Kenji <br>
+                        오토바이 경관 역<br></p>
+                </div>
+            </div>
+        </div>
+        <!--        content-->
+        <div data-role="footer" id="bottom">
+            <h3>&copy;CGV. ALL RIGHTS RESERVED</h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>

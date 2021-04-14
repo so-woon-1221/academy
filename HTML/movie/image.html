@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화 이미지</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #content {
+            padding: 10px;
+            background-color: white;
+        }
+
+        #top {
+            background-color: #00A056;
+            border: none;
+            text-shadow: none;
+            color: #FEFEDA;
+        }
+
+        #bottom {
+            background-color: white;
+            border: none;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" style="background-color: white;">
+    <div style="background-color: white;">
+        <!--        header ---------------------------------------->
+        <div data-role="header" id="top">
+            <h3>영화 이미지</h3>
+            <a href="index.html" rel="external" style="background: none; border: none; box-shadow: none">
+                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: #FEFEDA"></i>
+            </a>
+            <!--            <a href="index.html" rel="external">Previous</a>-->
+        </div>
+        <!--        header-->
+        <!--        content------------------------------------------>
+        <div data-role="ui-content">
+            <div class="fotorama" data-width="100%" data-nav="thumbs" data-arrows="false" data-loop="true">
+                <img src="img/image1.jpg" alt="image1">
+                <img src="img/image2.jpg" alt="image2">
+                <img src="img/image3.jpg" alt="image3">
+                <img src="img/image4.jpg" alt="image4">
+                <img src="img/image5.jpg" alt="image5">
+                <img src="img/image6.jpg" alt="image6">
+                <img src="img/image7.jpg" alt="image7">
+                <img src="img/image8.jpg" alt="image8">
+                <img src="img/image9.jpg" alt="image9">
+                <img src="img/image10.jpg" alt="image10">
+            </div>
+        </div>
+        <!--        content-->
+        <div data-role="footer" id="bottom">
+            <h3>&copy;CGV. ALL RIGHTS RESERVED</h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>

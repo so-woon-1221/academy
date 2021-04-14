@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" xmlns:data-theme="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화 소개</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #content {
+            padding: 10px;
+            background-color: white;
+        }
+
+        #top {
+            background-color: #00A056;
+            border: none;
+            text-shadow: none;
+            color: #FEFEDA;
+        }
+
+        #bottom {
+            background-color: white;
+            border: none;
+            text-shadow: none;
+            color: #373A31;
+        }
+
+        .nav-btn {
+            border-left: none;
+            border-top: none;
+            border-bottom: none;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div data-role="page" id="page1" style="background-color: white;">
+        <!--        header ---------------------------------------->
+        <div data-role="header" id="top">
+            <h3>소개</h3>
+            <a href="index.html" rel="external" style="background: none; border: none; box-shadow: none">
+                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: #FEFEDA"></i>
+            </a>
+            <!--            <a href="index.html" rel="external">Previous</a>-->
+        </div>
+        <!--        header-->
+        <!--        navigation bar-------------------------------------------------------------->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="desc1.html" rel="external" class="nav-btn"
+                       style="background-color: #00A056; color: #FEFEDA; text-shadow: none">줄거리</a>
+                </li>
+                <li><a href="desc2.html" rel="external" class="nav-btn"
+                       style="background-color: white; color: #707565;">등장인물</a></li>
+                <li><a href="desc3.html" rel="external" class="nav-btn"
+                       style="background-color: white; color: #707565;">평점</a></li>
+            </ul>
+        </div>
+        <!--        navigation bar-->
+        <!--        content------------------------------------------>
+        <div data-role="ui-content" id="content">
+            <h3>영화줄거리</h3>
+            <p style="color: #595959">
+                스즈메(우에노 주리)는 평범하다못해 어중간한 삶을 살고 있다.<br> 그의 남편은 항상 스즈메 걱정보다 스즈메가 거북이 밥을 주었는가가 제일 관심이다.<br> 그러던 어느날 스즈메가
+                집으로 돌아가려는
+                도중 100개의 계단 난간에서 손톱보다 작은 스파이 광고를 목격하고 스파이가 될 결심을 하는데.<br><br>
+                평범하다 못해 어중간한 삶을 살고 있는 주부 스즈메.<br> 그녀는 자신보다 애완용 거북에게 더 관심을 쏟는 남편과 무서울 정도로 단순한 일상 속에서 어느 날, ‘스파이 모집’ 광고를
+                발견한다.<br>
+                무심코 전화를 해버린 그녀 앞에 나타난 스파이는 ‘어느 나라’의 스파이라고 주장하는 쿠기타니 부부.<br> 그들은 스즈메 같은 평범한 사람이야말로 스파이를 해야한다고 설득한다.<br>
+                억지로 활동자금
+                500만엔을 건네 받은 스즈메의 스파이 교육이 시작되고 일상이 두근거리기 시작한다.<br> 하지만 어째서인지 스파이가 되고 나서부터 평소보다 주위의 시선을 더 모으게 되어 곤란한 그녀에게
+                마침내
+                최후의 미션이 내려지는데…<br><br>
+            </p>
+        </div>
+        <!--        content-->
+        <div data-role="footer" id="bottom">
+            <h3>&copy;CGV. ALL RIGHTS RESERVED</h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>
