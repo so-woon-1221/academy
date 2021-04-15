@@ -6,6 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <style>
         div {
@@ -32,6 +36,7 @@
                 left: 300px
             }
         }
+
         @keyframes animation2 {
             from {
                 background-color: blue;
@@ -68,16 +73,46 @@
         }
 
         @keyframes run {
-            0% {background-image: url("img/animation/1.png"); left: 40px}
-            10% {background-image: url("img/animation/2.png"); left: 80px}
-            20% {background-image: url("img/animation/3.png"); left: 120px}
-            30% {background-image: url("img/animation/4.png"); left: 160px}
-            40% {background-image: url("img/animation/5.png"); left: 200px}
-            50% {background-image: url("img/animation/6.png"); left: 240px}
-            60% {background-image: url("img/animation/7.png"); left: 280px}
-            70% {background-image: url("img/animation/8.png"); left: 320px}
-            80% {background-image: url("img/animation/9.png"); left: 360px}
-            90% {background-image: url("img/animation/10.png"); left: 400px}
+            0% {
+                background-image: url("img/animation/1.png");
+                left: 40px
+            }
+            10% {
+                background-image: url("img/animation/2.png");
+                left: 80px
+            }
+            20% {
+                background-image: url("img/animation/3.png");
+                left: 120px
+            }
+            30% {
+                background-image: url("img/animation/4.png");
+                left: 160px
+            }
+            40% {
+                background-image: url("img/animation/5.png");
+                left: 200px
+            }
+            50% {
+                background-image: url("img/animation/6.png");
+                left: 240px
+            }
+            60% {
+                background-image: url("img/animation/7.png");
+                left: 280px
+            }
+            70% {
+                background-image: url("img/animation/8.png");
+                left: 320px
+            }
+            80% {
+                background-image: url("img/animation/9.png");
+                left: 360px
+            }
+            90% {
+                background-image: url("img/animation/10.png");
+                left: 400px
+            }
         }
 
         #runningMan {
@@ -86,9 +121,9 @@
             position: absolute;
             left: 0;
             top: 500px;
-            animation-name: run;
-            animation-duration: 900ms;
-            animation-iteration-count: infinite;
+            /*animation-name: run;*/
+            /*animation-duration: 900ms;*/
+            /*animation-iteration-count: infinite;*/
             background-image: url("img/animation/1.png");
         }
     </style>
@@ -99,6 +134,6 @@
 <div id="ani"></div>
 <div id="ani2"></div>
 
-<div id="runningMan"></div>
+<div class="animate__animated animate__swing" id="runningMan"></div>
 </body>
 </html>
