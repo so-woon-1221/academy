@@ -53,7 +53,16 @@
         <!--        content------------------------------------------>
         <div data-role="ui-content" id="content">
             <!-- 카카오맵 ----------------------------------------------->
-            <div id="map" style="width: 100%;height: 500px;"></div>
+            <div id="map" style="width: 100%;height: 500px; position: relative">
+                <button id="here"
+                        style="position: absolute; right: 10px; bottom: 10px; z-index: 1000;
+                        width: 100px; background-color: rgba(0,0,0,0); border: none; box-shadow: none">
+                    <i class="fa fa-compass fa-2x" aria-hidden="true"></i></button>
+            </div>
+            <div>
+                <button id="searchButton"
+                style="background-color: rgba(0,0,0,0); border: none; box-shadow: none">지도 중심을 기준으로 검색</button>
+            </div>
             <script type="text/javascript"
                     src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b077dcee6bb65ca532acb0b6aab15ebf&libraries=services"></script>
             <script src="js/kakaomap.js">
