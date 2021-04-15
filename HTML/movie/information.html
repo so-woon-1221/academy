@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화 소개</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #content {
+            padding: 10px;
+            background-color: white;
+        }
+
+        #top {
+            background-color: #00A056;
+            border: none;
+            text-shadow: none;
+            color: #FEFEDA;
+        }
+
+        #bottom {
+            background-color: white;
+            border: none;
+            text-shadow: none;
+        }
+
+        .nav-btn {
+            border-left: none;
+            border-top: none;
+            border-bottom: none;
+            text-shadow: none;
+        }
+
+        #info p {
+            font-size: 0.7rem;
+        }
+
+        #info h5 {
+            color: #00A056
+        }
+
+        #actors {
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" style="background-color: white;">
+    <!--        header ---------------------------------------->
+    <div data-role="header" id="top">
+        <h3>소개</h3>
+        <a href="index.html" rel="external" style="background: none; border: none; box-shadow: none">
+            <i class="fa fa-home fa-lg" aria-hidden="true" style="color: #FEFEDA"></i>
+        </a>
+        <!--            <a href="index.html" rel="external">Previous</a>-->
+    </div>
+    <!--        header-->
+    <!--        navigation bar-------------------------------------------------------------->
+    <div data-role="navbar">
+        <ul>
+            <li><a href="information.html" rel="external" class="nav-btn"
+                   style="background-color: #00A056; color: #FEFEDA; text-shadow: none">영화 정보</a>
+            </li>
+            <li><a href="story.html" rel="external" class="nav-btn"
+                   style="background-color: white; color: #707565;">줄거리</a></li>
+            <li><a href="actors.html" rel="external" class="nav-btn"
+                   style="background-color: white; color: #707565;">등장인물</a></li>
+        </ul>
+    </div>
+    <!--        navigation bar-->
+    <!--        content------------------------------------------>
+    <div data-role="ui-content">
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <img src="img/main.jpg" style="width: 100%; padding: 10px; box-sizing: border-box">
+            </div>
+            <div class="ui-block-b" id="info">
+                <h5 id="movieNm"></h5>
+                <p id="movieNmOg"></p>
+                <p id="showTm"></p>
+                <p id="typeNm"></p>
+                <p id="nations"></p>
+                <p id="genreNm"></p>
+                <p id="peopleNm"></p>
+                <div id="actors" style="display: flex;">
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 0.5rem; text-align: center">data from 영화진흥위원회</p>
+    </div>
+    <!--        content-->
+    <div data-role="footer" id="bottom">
+        <h3>&copy;CGV. ALL RIGHTS RESERVED</h3>
+    </div>
+    <!--        영화 정보 가져오기-------------------------------->
+    <script>
+        $(document).ready(function () {
+            let key = '2e2be51ec06e20f7bebfb78d35515a29';
+            let movieCd = '20060327'
+            $.ajax({
+                url: `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=${key}&movieCd=${movieCd}`,
+                type: 'GET',
+                dataType: 'json',
+                success: function (json) {
+                    let info = json.movieInfoResult.movieInfo;
+                    movieNm.innerText = info.movieNm;
+                    movieNmOg.innerText = info.movieNmOg;
+                    showTm.innerText = info.showTm + '분';
+                    typeNm.innerText = '유형 : ' + info.typeNm;
+                    nations.innerText = '국가 : ' + info.nations[0].nationNm;
+                    genreNm.innerText = '장르: ' + info.genres[0].genreNm;
+                    peopleNm.innerText = '감독 : ' + info.directors[0].peopleNm;
+                    for (let i = 0; i < info.actors.length; i++) {
+                        let div = document.createElement('div');
+                        let name = document.createElement('p');
+                        name.innerHTML = info.actors[i].peopleNm;
+                        let nameOg = document.createElement('p');
+                        nameOg.innerHTML = info.actors[i].peopleNmEn;
+                        let cast = document.createElement('p');
+                        cast.innerHTML = info.actors[i].cast;
+                        div.insertAdjacentElement('beforeend', name);
+                        div.insertAdjacentElement('beforeend', nameOg);
+                        div.insertAdjacentElement('beforeend', cast);
+                        div.style.width = `${100/info.actors.length}%`;
+                        actors.append(div);
+                    }
+                    // actors.innerHTML = <p>`${info.actors[0]}`</p>;
+                },
+                async: false
+            })
+        });
+    </script>
+    <!--    영화 정보 가져오기-->
+</div>
+</body>
+</html>
