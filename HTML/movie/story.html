@@ -18,6 +18,22 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
 
+        h3 {
+            border-bottom: 1px solid gray;
+            padding-bottom: 10px
+        }
+
+        p {
+            color: #595959;
+            font-size: 0.8rem;
+        }
+
+        img {
+            width: 100%;
+            transition: all 500ms ease;
+            opacity: 0;
+        }
+
         #content {
             padding: 10px;
             background-color: white;
@@ -42,6 +58,15 @@
             border-top: none;
             border-bottom: none;
             text-shadow: none;
+        }
+
+        .scroll-up {
+            transform: translate(0, 100px);
+        }
+
+        .scroll-show {
+            opacity: 1;
+            transform: none;
         }
     </style>
 </head>
@@ -72,19 +97,29 @@
         <!--        navigation bar-->
         <!--        content------------------------------------------>
         <div data-role="ui-content" id="content">
-            <h3>영화줄거리</h3>
-            <p style="color: #595959">
-                스즈메(우에노 주리)는 평범하다못해 어중간한 삶을 살고 있다.<br> 그의 남편은 항상 스즈메 걱정보다 스즈메가 거북이 밥을 주었는가가 제일 관심이다.<br> 그러던 어느날 스즈메가
-                집으로 돌아가려는
-                도중 100개의 계단 난간에서 손톱보다 작은 스파이 광고를 목격하고 스파이가 될 결심을 하는데.<br><br>
-                평범하다 못해 어중간한 삶을 살고 있는 주부 스즈메.<br> 그녀는 자신보다 애완용 거북에게 더 관심을 쏟는 남편과 무서울 정도로 단순한 일상 속에서 어느 날, ‘스파이 모집’ 광고를
-                발견한다.<br>
-                무심코 전화를 해버린 그녀 앞에 나타난 스파이는 ‘어느 나라’의 스파이라고 주장하는 쿠기타니 부부.<br> 그들은 스즈메 같은 평범한 사람이야말로 스파이를 해야한다고 설득한다.<br>
-                억지로 활동자금
-                500만엔을 건네 받은 스즈메의 스파이 교육이 시작되고 일상이 두근거리기 시작한다.<br> 하지만 어째서인지 스파이가 되고 나서부터 평소보다 주위의 시선을 더 모으게 되어 곤란한 그녀에게
-                마침내
-                최후의 미션이 내려지는데…<br><br>
-            </p>
+            <h3>영화 줄거리</h3>
+
+            <p>스즈메(우에노 주리)는 평범하다못해 어중간한 삶을 살고 있다.</p>
+            <p>그의 남편은 항상 스즈메 걱정보다 스즈메가 거북이 밥을 주었는가가 제일 관심이다.</p>
+            <img src="img/story/story1.jpeg" class="scroll-up">
+            <p>그녀는 자신보다 애완용 거북에게 더 관심을 쏟는 남편과 무서울 정도로 단순한 일상 속에서 어느 날,
+                ‘스파이 모집’ 광고를 발견한다.</p>
+            <p>어느날 집으로 돌아가려는
+                도중 100개의 계단 난간에서 손톱보다 작은 스파이 광고를 목격하고 스파이가 될 결심을 하는데.</p>
+            <img src="img/story/story2-2.jpeg" class="scroll-up">
+            <p>무심코 전화를 해버린 그녀 앞에 나타난 스파이는 ‘어느 나라’의 스파이라고 주장하는 쿠기타니 부부.</p>
+            <p>그들은 스즈메 같은 평범한 사람이야말로 스파이를 해야한다고 설득한다.</p>
+            <img src="img/story/story3.jpeg" class="scroll-up">
+            <p>억지로 활동자금 500만엔을 건네 받은 스즈메의 스파이 교육이 시작되고 일상이 두근거리기 시작한다.</p>
+            <p>
+                하지만 어째서인지 스파이가 되고 나서부터 평소보다 주위의 시선을 더 모으게 되어
+                곤란한 그녀에게 마침내 최후의 미션이 내려지는데…</p>
+
+            <h3>코멘트</h3>
+            <p>어릴때부터 평범한 스즈메<sub> -참새</sub></p>
+            <p>어릴때부터 남달랐던 쿠자쿠<sub> -공작</sub></p>
+            <p>하지만 누가 더 행복한 삶일까? 평범한 삶이란 제일 독특한 것이다.</p>
+            <img src="img/story/story4.jpeg" class="scroll-up">
         </div>
         <!--        content-->
         <div data-role="footer" id="bottom">
@@ -92,5 +127,21 @@
         </div>
     </div>
 </div>
+<script>
+    const scrollElementList = document.querySelectorAll('.scroll-up');
+
+    const scrollFunction = function () {
+        for (let elem of scrollElementList) {
+            if (!elem.classList.contains('scroll-show')) {
+                if (window.innerHeight > elem.getBoundingClientRect().top + 30) {
+                    elem.classList.add('scroll-show');
+                }
+            }
+        }
+    }
+
+    window.addEventListener('load', scrollFunction);
+    window.addEventListener('scroll', scrollFunction);
+</script>
 </body>
 </html>
