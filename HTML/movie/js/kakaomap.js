@@ -134,7 +134,7 @@ $(window).load(function () {
         div.addEventListener('click', () => {
             infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
             infowindow.open(map, marker);
-            // window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({top: 0, behavior: 'smooth'});
             map.setCenter(new kakao.maps.LatLng(place.y, place.x));
             map.setLevel(6);
         })
