@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>영화관 위치</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #content {
+            padding: 10px;
+            background-color: white;
+        }
+
+        #top {
+            background-color: #00A056;
+            border: none;
+            text-shadow: none;
+            color: #FEFEDA;
+        }
+
+        #bottom {
+            background-color: white;
+            border: none;
+            text-shadow: none;
+            color: #373A31;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div data-role="page" style="background-color: white;">
+        <!--        header ---------------------------------------->
+        <div data-role="header" id="top">
+            <h3>영화관 위치</h3>
+            <a href="index.html" rel="external" style="background: none; border: none; box-shadow: none">
+                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: #FEFEDA"></i>
+            </a>
+            <!--            <a href="index.html" rel="external">Previous</a>-->
+        </div>
+        <!--        header-->
+        <!--        content------------------------------------------>
+        <div data-role="ui-content" id="content">
+            <!-- 카카오맵 ----------------------------------------------->
+            <div id="kakaomap" style="width: 100%;height: 500px;"></div>
+            <script type="text/javascript"
+                    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b077dcee6bb65ca532acb0b6aab15ebf&libraries=services"></script>
+            <script>
+                let mapContainer = document.getElementById('kakaomap'),
+                    mapOption = {
+                        center: new kakao.maps.LatLng(37.734453, 126.898561),
+                        level: 3
+                    };
+
+                let map = new kakao.maps.Map(mapContainer, mapOption);
+
+                let locPosition = null;
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition((position => {
+                        let lat = position.coords.latitude;
+                        let lon = position.coords.longitude;
+
+                        locPosition = new kakao.maps.LatLng(lat, lon);
+                        let message = '<div style="padding: 5px">여기에 계신가요?!</div>';
+
+                        displayMarker(locPosition, message);
+                    }))
+                } else {
+                    locPosition = new kakao.maps.LatLng(33,126);
+                    let message = '<div style="padding: 5px">geolocation 사용 불가</div>';
+
+                    displayMarker(locPosition, message);
+                }
+
+                function displayMarker(locPosition, message){
+                    let marker = new kakao.maps.Marker({
+                        map: map,
+                        position: locPosition
+                    });
+
+                    let iwContent = message,
+                        iwRemoveable = true;
+
+                    let infoWindow = new kakao.maps.InfoWindow({
+                        content: iwContent,
+                        removable: iwRemoveable
+                    });
+
+                    infoWindow.open(map, marker);
+
+                    map.setCenter(locPosition);
+                }
+
+
+
+                let places = new kakao.maps.services.Places();
+
+                let callback = function (results, status) {
+                    if (status === kakao.maps.services.Status.OK) {
+                        for (let result of results) {
+                            let place_name = result['place_name'];
+                            let road_address = result['road_address_name'];
+                            let distance = result['distance'];
+
+                            let address = document.createElement('div');
+                            let name = document.createElement('p');
+                            name.innerHTML = place_name;
+                            let road = document.createElement('p');
+                            road.innerHTML = road_address;
+                            let dist = document.createElement('p');
+                            dist.innerHTML = distance;
+                            address.append(name);
+                            address.append(road);
+                            address.append(dist);
+                            address.style.borderBottom = '1px solid gray';
+                            let content = document.getElementById('content');
+                            content.insertAdjacentElement('beforeend', address)
+                        }
+                    }
+                };
+
+                places.keywordSearch('CGV', callback, {size: 5})
+
+            </script>
+            <!-- 카카오맵.끝.-->
+        </div>
+        <!--        content-->
+        <div data-role="footer" id="bottom">
+            <h3>&copy;CGV. ALL RIGHTS RESERVED</h3>
+        </div>
+    </div>
+</body>
+</html>
