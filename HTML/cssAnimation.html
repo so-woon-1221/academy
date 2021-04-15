@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: 100ms;
+        }
+
+        div:hover {
+            width: 95%;
+            height: 500px;
+        }
+
+        @keyframes animation {
+            from {
+                background-color: red;
+                left: 0;
+                top: 0
+            }
+            to {
+                background-color: blue;
+                top: 100px;
+                left: 300px
+            }
+        }
+        @keyframes animation2 {
+            from {
+                background-color: blue;
+                left: 300px;
+                top: 100px
+            }
+            to {
+                background-color: red;
+                top: 0;
+                left: 0
+            }
+        }
+
+        #ani {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            animation-name: animation;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        #ani2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            animation-name: animation2;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+
+        @keyframes run {
+            0% {background-image: url("img/animation/1.png"); left: 40px}
+            10% {background-image: url("img/animation/2.png"); left: 80px}
+            20% {background-image: url("img/animation/3.png"); left: 120px}
+            30% {background-image: url("img/animation/4.png"); left: 160px}
+            40% {background-image: url("img/animation/5.png"); left: 200px}
+            50% {background-image: url("img/animation/6.png"); left: 240px}
+            60% {background-image: url("img/animation/7.png"); left: 280px}
+            70% {background-image: url("img/animation/8.png"); left: 320px}
+            80% {background-image: url("img/animation/9.png"); left: 360px}
+            90% {background-image: url("img/animation/10.png"); left: 400px}
+        }
+
+        #runningMan {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            left: 0;
+            top: 500px;
+            animation-name: run;
+            animation-duration: 900ms;
+            animation-iteration-count: infinite;
+            background-image: url("img/animation/1.png");
+        }
+    </style>
+</head>
+<body>
+<!--<div>aa</div>-->
+
+<div id="ani"></div>
+<div id="ani2"></div>
+
+<div id="runningMan"></div>
+</body>
+</html>
