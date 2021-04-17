@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+<!--배경 동영상 ----------------------------------->
+<div class="video-background">
+
+    <div class="video-foreground">
+        <iframe src="https://www.youtube.com/embed/_QDxYbCZxv0?amp;playlist=_QDxYbCZxv0&loop=1&autoplay=1&mute=1&rel=0&controls=0"
+                allowfullscreen frameborder="0"></iframe>
+    </div>
+</div>
+<!--배경 동영상-->
+
+<!--로고 사진---------------------------------------->
+<h1 class="logo">
+    <a href="index.html">
+        <img src="img/logo.png"/>
+    </a>
+</h1>
+<!--로고 사진-->
+
+<!-- 좌측 메뉴--------------------------------------->
+<div class="nav-bar">
+    <ul class="nav-bar-item">
+        <li class="on">
+            <a href="#">모든 제품</a>
+            <ul class="nav-bar-item-second on">
+                <li><a href="#">거실</a></li>
+                <li><a href="#">침실</a></li>
+                <li><a href="#">주방</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">신제품</a>
+            <ul class="nav-bar-item-second">
+                <li><a href="#">거실</a></li>
+                <li><a href="#">침실</a></li>
+                <li><a href="#">주방</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">할인 상품</a>
+            <ul class="nav-bar-item-second">
+                <li><a href="#">모두</a></li>
+                <li><a href="#">20SS</a></li>
+                <li><a href="#">19SS</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">마이 페이지</a>
+            <ul class="nav-bar-item-second">
+                <li><a href="#">장바구니</a></li>
+                <li><a href="#">배송조회</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<!--      좌측 메뉴-->
+
+<!-- 우측 메뉴--------------------------------------------->
+<div id="menu_button">
+    <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+
+</div>
+<div class="right-menu" id="right_menu">
+
+</div>
+<!-- 우측 메뉴-->
+
+<script>
+    let menu_button = document.getElementById('menu_button');
+    let right_menu = document.getElementById('right_menu');
+    menu_button.addEventListener('click', () => {
+        if (right_menu.style.left == '100%') {
+            right_menu.style.left = '65%';
+        } else {
+            right_menu.style.left = '100%';
+        }
+    })
+</script>
+</body>
+</html>

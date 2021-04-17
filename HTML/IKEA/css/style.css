@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 배경 동영상*/
+.video-background {
+    background: #000;
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+/*로고 이미지*/
+.logo {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 10;
+}
+
+.logo img {
+    width: 250px;
+    height: auto;
+}
+
+/*좌측 메뉴*/
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 650px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: skew(-18deg);
+}
+
+.nav-bar ul {
+    list-style: none;
+}
+
+.nav-bar-item {
+    position: fixed;
+    top: 250px;
+    right: 0;
+    display: inline-block;
+}
+
+.nav-bar-item > li {
+    position: relative;
+}
+
+.nav-bar-item > li > a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: black;
+    line-height: 3;
+
+    padding-right: 10px;
+
+    display: block;
+    width: 150px;
+    height: 60px;
+    text-align: right;
+}
+
+.nav-bar-item > li:hover {
+    background-color: rgba(255, 205, 0, 0.5);
+}
+
+.nav-bar-item > li.on > a {
+    background-color: #FFCD00;
+    color: #002FA2;
+}
+
+/*2번째 좌측 메뉴 위치*/
+.nav-bar-item ul {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+
+/*2번째 좌측메뉴 애니메이션*/
+.nav-bar-item > li:hover ul {
+    transition: all 0.4s ease;
+    opacity: 1;
+    transform: translateX(150px);
+}
+
+
+/*2번째 좌측메뉴 디자인*/
+.nav-bar-item-second > li > a {
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 3;
+    font-size: 1.2rem;
+    color: black;
+    padding-left: 10px;
+
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: #FFCD00;
+}
+
+/*우측메뉴*/
+#menu_button {
+    position: fixed;
+
+    top: 40px;
+    right: 40px;
+
+    z-index: 10;
+}
+
+#menu_button .fa {
+    cursor: pointer;!important;
+}
+.right-menu {
+    position: fixed;
+    width: 35%;
+    height: 100%;
+    left: 100%;
+    top: 0;
+
+    background-color: white;
+
+    transition: all 0.3s ease;
+}
