@@ -124,12 +124,15 @@
 <script>
     let menu_button = document.getElementById('menu_button');
     let right_menu = document.getElementById('right_menu');
+    let opened = false;
     menu_button.addEventListener('click', () => {
-        if (right_menu.style.left == '100%') {
+        if (!opened) {
             right_menu.style.left = '65%';
+
         } else {
             right_menu.style.left = '100%';
         }
+        opened = !opened;
     })
 </script>
 </body>

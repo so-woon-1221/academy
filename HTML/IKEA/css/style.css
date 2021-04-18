@@ -192,6 +192,7 @@ a {
     }
 }
 
+
 /*우측 메뉴 전체 틀*/
 .right-menu {
     position: fixed;
@@ -225,7 +226,7 @@ a {
 }
 
 
-/* 우측 메뉴 1번째 - 광고 */
+/* 우측 메뉴 나누기 */
 .right-menu-1 {
     position: relative;
     width: 100%;
