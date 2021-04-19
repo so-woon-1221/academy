@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        /*body {*/
+        /*    background-color: blue;*/
+        /*}*/
+
+        /*@media (max-width: 700px) {*/
+        /*    body {*/
+        /*        background-color: yellow;*/
+        /*    }*/
+        /*}*/
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: #222222;
+            display: flex;
+        /*    overflow: hidden;*/
+        }
+
+        .navbar a {
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            /*float: left;*/
+        }
+        
+        @media screen and (max-width: 500px){
+            .navbar {
+                display: inline-block;
+                width: 100%;
+            }
+            /*.navbar a {*/
+            /*    float: none;*/
+            /*}*/
+        }
+
+        .flexWrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flexWrap .menu {
+            width: 25%;
+            padding: 20px;
+            background-color: gray;
+        }
+
+        @media screen and (max-width: 600px) {
+            .flexWrap .menu {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a href="#">nav1</a>
+    <a href="#">nav2</a>
+    <a href="#">nav3</a>
+</div>
+
+<div class="flexWrap">
+    <div class="flexWrap menu"><h1>asdj</h1></div>
+    <div class="flexWrap menu"><h1>asdj</h1></div>
+    <div class="flexWrap menu"><h1>asdj</h1></div>
+    <div class="flexWrap menu"><h1>asdj</h1></div>
+    <div class="flexWrap menu"><h1>asdj</h1></div>
+    <div class="flexWrap menu"><h1>asdj</h1></div>
+</div>
+</body>
+</html>
