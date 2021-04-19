@@ -25,7 +25,7 @@
         .navbar {
             background-color: #222222;
             display: flex;
-        /*    overflow: hidden;*/
+            /*    overflow: hidden;*/
         }
 
         .navbar a {
@@ -36,12 +36,13 @@
             text-decoration: none;
             /*float: left;*/
         }
-        
-        @media screen and (max-width: 500px){
+
+        @media screen and (max-width: 500px) {
             .navbar {
                 display: inline-block;
                 width: 100%;
             }
+
             /*.navbar a {*/
             /*    float: none;*/
             /*}*/
@@ -63,6 +64,25 @@
                 width: 50%;
             }
         }
+
+        #imageText {
+            color: red;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 100px;
+            transition: all 0.4s ease;
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        #imageDiv:hover #imageText {
+            /*font-size: 200px;*/
+            /*transform: scale(2);*/
+            opacity: 1;
+            transform: none;
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -79,6 +99,14 @@
     <div class="flexWrap menu"><h1>asdj</h1></div>
     <div class="flexWrap menu"><h1>asdj</h1></div>
     <div class="flexWrap menu"><h1>asdj</h1></div>
+</div>
+
+<div style="position: relative;background-image: url('img1.jpg');
+     width: 500px; height: 500px; background-size: cover; background-position: right center"
+     id="imageDiv">
+    <span id="imageText">
+        HI
+    </span>
 </div>
 </body>
 </html>
