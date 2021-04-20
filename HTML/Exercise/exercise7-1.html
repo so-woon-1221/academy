@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXERCISE 7-1</title>
+
+    <style>
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .wrapper .box {
+            width: 33.3333%;
+            height: 100px;
+        }
+
+        .wrapper .box:nth-child(1) {background-color: red}
+        .wrapper .box:nth-child(2) {background-color: green}
+        .wrapper .box:nth-child(3) {background-color: blue}
+
+        @media screen and (max-width: 768px){
+            .wrapper .box {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper box"></div>
+        <div class="wrapper box"></div>
+        <div class="wrapper box"></div>
+    </div>
+</body>
+</html>

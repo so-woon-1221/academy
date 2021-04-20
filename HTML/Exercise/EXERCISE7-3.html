@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        .main {
+            width: 100%;
+            background-color: cadetblue;
+            height: 700px;
+            text-align: center;
+            padding-top: 300px;
+        }
+
+        .menu {
+            width: 100%;
+        }
+
+        .menu .navbar {
+            width: 100%;
+            text-align: center;
+        }
+
+        .menu .navbar button {
+            font-size: 1.2rem;
+            border: none;
+            background-color: white;
+            padding: 20px 30px;
+        }
+
+        .menu .menu-panel {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 10%;
+        }
+
+        .menu .menu-panel .panel {
+            width: 25%;
+            height: 300px;
+            background-color: gray;
+            /*margin: 10px;*/
+        }
+
+        .festa {
+            margin: 0 10%;
+            background-color: lightpink;
+            text-align: center;
+            height: 500px;
+            padding-top: 200px;
+        }
+
+        .TV {
+            margin: 0 10%;
+            background-color: darkslategray;
+            text-align: center;
+            height: 500px;
+            padding-top: 200px;
+        }
+
+
+        .electronics {
+            margin: 0 10%;
+            background-color: yellowgreen;
+            text-align: center;
+            height: 500px;
+            padding-top: 200px;
+        }
+
+        .story {
+            display: flex;
+            height: 500px;
+        }
+
+        .story .blank {
+            width: 10%;
+        }
+
+        .story .story-left {
+            width: 20%;
+            padding-top: 200px;
+            /*background-color: yellowgreen;*/
+        }
+
+        .story .story-middle {
+            width: 40%;
+            background-color: lightskyblue;
+        }
+
+        .story .story-right {
+            width: 20%;
+            padding-top: 100px;
+            display: block;
+        }
+
+        .trend {
+            display: flex;
+            flex-wrap: wrap;
+            height: 700px;
+        }
+
+        .trend .blank {
+            width: 10%;
+        }
+
+        .trend .trend-left {
+            width: 26.666%;
+            display: block;
+        }
+
+        .trend .trend-left .first, .trend .trend-right .first {
+            width: 100%;
+            height: 450px;
+            background-color: antiquewhite;
+        }
+
+        .trend .trend-left .second, .trend .trend-right .second {
+            width: 100%;
+            height: 250px;
+            background-color: slategray;
+        }
+
+        .trend .trend-middle {
+            width: 26.666%;
+            display: block;
+        }
+
+        .trend .trend-middle .first {
+            width: 100%;
+            height: 250px;
+            background-color: slategray;
+        }
+
+        .trend .trend-middle .second {
+            width: 100%;
+            height: 450px;
+            background-color: antiquewhite;
+        }
+
+        .trend .trend-right {
+            width: 26.666%;
+            display: block;
+        }
+
+        .bottom-menu {
+            display: flex;
+            flex-wrap: wrap;
+            border-top: 1px solid black;
+            padding: 0 10%;
+        }
+
+        .bottom-menu a {
+            display: block;
+            text-decoration: none;
+            width: 20%;
+            height: 200px;
+            border-right: 1px solid black;
+            color: black;
+            font-size: 1.4rem;
+        }
+
+        .bottom-menu a:nth-child(5) {
+            border: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu .menu-panel .panel {
+                width: 50%;
+            }
+
+            .menu .menu-panel {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+
+            .festa, .TV, .electronics {
+                margin: 0;
+            }
+
+            .story .blank {
+                width: 0%;
+            }
+
+            .story .story-left {
+                width: 30%;
+            }
+
+            .story .story-middle {
+                width: 50%;
+            }
+
+            .story .story-right {
+                width: 20%;
+            }
+
+            .trend .blank {
+                width: 0%;
+            }
+
+            .trend .trend-left {
+                width: 50%;
+            }
+
+            .trend .trend-middle {
+                width: 50%;
+            }
+
+            .trend .trend-right {
+                display: none;
+            }
+
+            .bottom-menu {
+                padding: 0
+            }
+
+            .bottom-menu a {
+                width: 100%;
+                height: 50px;
+                border-right: none;
+                border-bottom: 1px solid black;
+            }
+
+            .bottom-menu a:nth-child(5) {
+                border-bottom: 1px solid black;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <h1>런칭</h1>
+</div>
+<div class="menu">
+    <div class="menu navbar">
+        <button>menu1</button>
+        <button>menu2</button>
+        <button>menu3</button>
+        <button>menu4</button>
+        <button>menu5</button>
+    </div>
+    <div class="menu menu-panel">
+        <div class="menu menu-panel panel">menu1-1</div>
+        <div class="menu menu-panel panel">menu1-2</div>
+        <div class="menu menu-panel panel">menu1-3</div>
+        <div class="menu menu-panel panel">menu1-4</div>
+        <div class="menu menu-panel panel">menu1-5</div>
+        <div class="menu menu-panel panel">menu1-6</div>
+        <div class="menu menu-panel panel">menu1-7</div>
+        <div class="menu menu-panel panel">menu1-8</div>
+    </div>
+</div>
+<div class="festa">
+    <h1> 페스타 </h1>
+</div>
+<div class="TV">
+    <h1> TV AND AUDIO </h1>
+</div>
+<div class="electronics">
+    <h1> 가전 </h1>
+</div>
+<div class="story">
+    <div class="story blank"></div>
+    <div class="story story-left">
+        <h1>스토리</h1>
+    </div>
+    <div class="story story-middle"></div>
+    <div class="story story-right">
+        <p>Story 1</p>
+        <p>Story 2</p>
+        <p>Story 3</p>
+    </div>
+    <div class="story blank"></div>
+</div>
+<div class="trend">
+    <div class="trend blank"></div>
+    <div class="trend trend-left">
+        <div class="trend trend-left first"></div>
+        <div class="trend trend-left second"></div>
+    </div>
+    <div class="trend trend-middle">
+        <div class="trend trend-middle first"></div>
+        <div class="trend trend-middle second"></div>
+    </div>
+    <div class="trend trend-right">
+        <div class="trend trend-right first"></div>
+        <div class="trend trend-right second"></div>
+    </div>
+
+</div>
+<div class="bottom-menu">
+    <a href="#">menu1</a>
+    <a href="#">menu2</a>
+    <a href="#">menu3</a>
+    <a href="#">menu4</a>
+    <a href="#">menu5</a>
+</div>
+<div class="footer"></div>
+</body>
+</html>
