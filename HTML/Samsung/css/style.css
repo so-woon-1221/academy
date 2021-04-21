@@ -25,7 +25,7 @@
     color: transparent;
     border: none;
     border-radius: 0;
-    border-bottom: 3px solid rgba(255,255,255,0.5);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
     padding: 5px;
 }
 
@@ -34,7 +34,7 @@
     width: 100px;
     height: 30px;
     color: black;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 5px
 }
 
@@ -52,7 +52,7 @@
 }
 
 .item p {
-    font-size: 1.5rem;
+    font-size: 1.25vw;
 }
 
 #menu {
@@ -67,11 +67,29 @@
     width: 100%;
 }
 
-#footer .border-right {
-    border-right: 1px solid gray;
+#footer .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+#footer h3 {
+    padding: 10px 10px 20px;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 768px){
+#footer li {
+    padding: 10px 10px;
+    font-size: 17px;
+}
+
+#footer .col-sm-2 {
+    border-left: 1px solid #CCCCCC;
+}
+
+#footer .footPanel {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
     .carousel-inner .carousel-caption {
         top: 10%;
         text-align: center;
@@ -85,8 +103,37 @@
 
     .carousel-indicators .active {
         width: 50px;
-        border-bottom: 10px solid rgba(255,255,255,0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         overflow: hidden;
-        /*paddig: 100px;*/
+        height: 0px;
+    }
+
+    .item h3 {
+        font-size: 4rem;
+    }
+
+    .item p {
+        font-size: 3.5vw;
+    }
+    #footer .row {
+        display: block;
+    }
+
+    #footer h3 {
+        font-size: 2rem;
+    }
+
+    #footer h3:after {
+        content: '\02795';
+        float: right;
+    }
+
+    #footer .open h3:after {
+        content: '\2796';
+    }
+
+    #footer .col-sm-2 {
+        border-left: none;
+        border-top: 1px solid #CCCCCC;
     }
 }

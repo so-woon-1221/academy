@@ -1,7 +1,7 @@
 let desktops = document.querySelectorAll('.desktop');
 let mobiles = document.querySelectorAll('.mobile');
 
-window.onload = () => {
+$(document).ready(() => {
     if (window.innerWidth <= 768) {
         for (let desktop of desktops) {
             desktop.style.display = 'none';
@@ -11,7 +11,7 @@ window.onload = () => {
             mobile.style.display = 'block';
         }
     }
-}
+})
 
 for (let desktop of desktops) {
     desktop.style.display = 'block';

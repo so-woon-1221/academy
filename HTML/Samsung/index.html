@@ -32,11 +32,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="#product" data-toggle="collapse" data-target="#products">제품</a>
-                    <div id="products">asdf</div>
                 </li>
                 <li>
                     <a href="#product" data-toggle="collapse" data-target="#test">기획전</a>
-                    <div id="test">test</div>
                 </li>
                 <li><a href="#product">스토리</a></li>
                 <li><a href="#product">고객 서비스</a></li>
@@ -134,51 +132,100 @@
     </div>
 </div>
 
-<div class="container-fluid" style="border-top: 1px solid gray; border-bottom: 1px solid gray">
+<div class="container-fluid" style="border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC">
     <div class="container" id="footer">
         <div class="row">
-            <div class="col-sm-2">
-                <h3 data-toggle="collapse" data-target="#list">제품</h3>
-                <ul style="list-style: none; padding-left: 0" id="list">
-                    <li>스마트폰</li>
-                    <li>태블릿</li>
-                    <li>워치</li>
-                    <li>버즈</li>
-                    <li>TV</li>
-                    <li>Lifestyle TB</li>
-                    <li>BESPOKE</li>
-                    <li>냉장고</li>
-                    <li>김치냉장고</li>
+            <div class="col-sm-4 footPanelHead">
+                <h3>제품</h3>
+                <div class="row footPanel">
+                    <div class="col-sm-6 col-xs-6">
+                        <ul style="list-style: none; padding-left: 0">
+                            <li>스마트폰</li>
+                            <li>태블릿</li>
+                            <li>워치</li>
+                            <li>버즈</li>
+                            <li>TV</li>
+                            <li>Lifestyle TB</li>
+                            <li>BESPOKE</li>
+                            <li>냉장고</li>
+                            <li>김치냉장고</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <ul style="list-style: none; padding-left: 0">
+                            <li>오븐 / 전자레인지</li>
+                            <li>식기세척기</li>
+                            <li>에어컨</li>
+                            <li>세탁기</li>
+                            <li>건조기</li>
+                            <li>청소기</li>
+                            <li>공기청정기</li>
+                            <li>갤럭시북</li>
+                            <li>프린터</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 footPanelHead">
+                <h3>고객서비스</h3>
+                <ul style="list-style: none; padding-left: 0" class="footPanel">
+                    <li>삼성닷컴 FAQ</li>
+                    <li>이메일상담</li>
+                    <li>매장 찾기</li>
+                    <li>서비스센터 찾기</li>
+                    <li>디지털프라자</li>
+                    <li>MD 비즈니스 협력제안</li>
+                    <li>비즈니스 협력제안</li>
+                    <li>삼성멤버스 커뮤니티</li>
+                    <li>E-카탈로그</li>
                 </ul>
             </div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2">
-                <h3>고객서비스</h3>
-            </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 footPanelHead">
                 <h3>부가정보</h3>
+                <ul style="list-style: none; padding-left: 0" class="footPanel">
+                    <li>데이코</li>
+                    <li>뉴스룸</li>
+                    <li>디자인 삼성</li>
+                    <li>삼성전자 사회공헌</li>
+                    <li>협력회사 사이버 신문고</li>
+                    <li>폐카트리지 회수신청</li>
+                </ul>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 footPanelHead">
                 <h3>기업정보</h3>
+                <ul style="list-style: none; padding-left: 0" class="footPanel">
+                    <li>회사소개</li>
+                    <li>투자자 정보</li>
+                    <li>공지사항</li>
+                    <li>제품 접근성</li>
+                    <li>배당조회</li>
+                </ul>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 footPanelHead">
                 <h3>윤리&준법경영</h3>
+                <ul style="list-style: none; padding-left: 0" class="footPanel">
+                    <li>경영원칙</li>
+                    <li>부정제보</li>
+                    <li>법위반제보</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
 <script src="js/imageSize.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/footer.js"></script>
 <script>
     const footer = document.getElementById('footer');
     const titles = footer.querySelectorAll('h3');
 
     for (let title of titles) {
-        title.addEventListener('mouseover', (event)=> {
+        title.addEventListener('mouseover', (event) => {
             title.classList.add('show')
         })
-        title.addEventListener('mouseout', (event)=> {
-           title.classList.add('hide');
+        title.addEventListener('mouseout', (event) => {
+            title.classList.add('hide');
         })
     }
 </script>
