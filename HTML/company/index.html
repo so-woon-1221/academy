@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Company</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <!--                <span class="icon-bar"></span>-->
+                <!--                <span class="icon-bar"></span>-->
+                <!--                <span class="icon-bar"></span>-->
+            </button>
+            <a class="navbar-brand" href="#">LOGO</a>
+        </div>
+        <!--        navbar-collapse 모바일에서 메뉴 닫기-->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#pricing">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="jumbotron text-center">
+    <h1>SOWOON</h1>
+    <p>Hello world</p>
+    <!--    검색창 form-inline으로 한줄 전체 차지 안하게 함-->
+    <form class="form-inline" action="search.jsp">
+        <div class="input-group" id="search">
+            <input type="search" class="form-control" size="50" placeholder="Search" required>
+            <div class="input-group-btn">
+                <button type="button" class="btn">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- content - 소개-->
+<div class="container-fluid" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Introduce</h1>
+                <p>SOWOON is SUPER human</p>
+                <p>Improve myself everyday!</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-signal logo"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--content - 연혁-->
+<div class="container-fluid bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo"></span>
+            </div>
+            <div class="col-sm-8">
+                <h1>HISTORY</h1>
+                <p>BIRTH 1995.12.21</p>
+                <p>DEATH NEVER</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--서비스-->
+<div class="container-fluid text-center" id="services">
+    <h2>SKILL</h2>
+    <h4>WHAT I CAN</h4>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="https://img.icons8.com/ios/100/000000/java-coffee-cup-logo.png"/>
+            <h4>JAVA</h4>
+            <p>ooooo</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://img.icons8.com/windows/96/000000/js-squared.png"/>
+            <h4>JAVA SCRIPT</h4>
+            <p>ooooo</p>
+        </div>
+        <div class="col-sm-4">
+            <<img src="https://img.icons8.com/wired/128/000000/react.png"/>
+            <h4>REACT</h4>
+            <p>ooooo</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="https://img.icons8.com/ios/100/000000/sql.png"/>
+            <h4>SQL</h4>
+            <p>ooooo</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://img.icons8.com/color/96/000000/mongodb.png"/>
+            <h4>MONGODB</h4>
+            <p>ooooo</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://img.icons8.com/windows/96/000000/nodejs.png"/>
+            <h4>NODE JS</h4>
+            <p>ooooo</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid text-center bg-gray" id="portfolio">
+    <h2>Portfolio</h2>
+    <h4>What we have created</h4>
+    <div class="row text-center">
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="image/image1.jpeg" alt="image1">
+                <p><strong>Image1</strong></p>
+                <p>Yes, we built Image1</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="image/image2.jpeg" alt="image2">
+                <p><strong>Image1</strong></p>
+                <p>Yes, we built Image1</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="image/image3.jpeg" alt="image3">
+                <p><strong>Image1</strong></p>
+                <p>Yes, we built Image1</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-gray" id="contact">
+    <h2 class="text-center">CONTACT</h2>
+    <div class="row">
+        <div class="col-sm-5 contact-image">
+        </div>
+        <div class="col-sm-7">
+            <p>You can Always Contact me</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span>Seoul, KR</p>
+            <p><span class="glyphicon glyphicon-phone"></span>010-5555-5555</p>
+            <p><span class="glyphicon glyphicon-envelope"></span>janus7359@gmail.com</p>
+        </div>
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>Bootstrap Theme Made By <a href="https://so-woon-1221.github.io" title="Visit My Blog">
+        so-woon-1221.github.io
+    </a></p>
+</footer>
+
+<script src="js/scroll.js"></script>
+</body>
+</html>
