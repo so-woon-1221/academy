@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Netflix</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,128 +15,121 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- 네비게이션 ----------------------------------------------------------------->
-<nav>
-    <div style="position:absolute;left:20px;top:15px !important;">
-        <a href="#">
-            <svg width="150" height="30" viewBox="0 0 111 30">
-                <g id="netflix-logo">
-                    <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"
-                          id="Fill-14"></path>
-                </g>
-            </svg>
-        </a>
-    </div>
-    <div style="position:absolute;right:20px;top:0;">
-        <div class="dropdown" style="float:left;margin-right: 10px;">
-            <button class="btn btn-default dropdown-toggle" style="width:100px;text-align: left;" type="button"
-                    data-toggle="dropdown">
-                <i class="fas fa-globe"></i>
+<!--최상단 부분-------------------->
+<div class="container-fluid text-center border-bottom" id="title">
+    <div class="title-filter"></div>
+    <div class="title-description">
+        <img src="img/logo.svg">
+        <div class="btn-group" id="buttonGroup">
+            <button id="languageButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 한국어
-                <span class="caret"></span></button>
-            <ul class="dropdown-menu" style="min-width:100px !important;top:50px;">
-                <li><a href="#">한국어</a></li>
-                <li><a href="#">영어</a></li>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">한국어</a> </li>
+                <li><a href="#">영어</a> </li>
             </ul>
         </div>
-        <a href="#" class="btn btn-danger">로그인</a>
+        <div class="title-text">
+            <h1>영화, TV 프로그램을 무제한으로.</h1>
+            <h3>다양한 디바이스에서 시청하세요. 언제든지 해지하실 수 있습니다.</h3>
+            <h4>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</h4>
+            <form class="title-form">
+                <input id="email" name="email" class="title-form-input">
+                <button type="submit" id="start" name="start" class="title-form-button">시작하기 ></button>
+            </form>
+        </div>
     </div>
 
-</nav>
-<!-- 네비게이션 -->
-<!-- 타이틀 -------------------------------------------------------------------->
-<div id="title" class="container-fluid text-center border-bottom">
-    <div id="img-filter"></div>
-    <div class="title-box">
-        <h1>영화,TV프로그램을<br>무제한으로...</h1>
-        <h3>다양한 디바이스에서 시청하세요. 언제든 해지하실 수 있습니다.</h3>
-        <p>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</p>
-        <form class="form-inline">
-            <div class="input-group">
-                <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-danger">시작하기</button>
-                </div>
-            </div>
-        </form>
-    </div>
+    <script>
+        let languageGroup = document.getElementById('buttonGroup');
+        let languageButton = document.getElementById('languageButton');
+        let languageList = languageGroup.querySelectorAll('a');
 
+
+        for (let language of languageList) {
+            language.addEventListener('click', function () {
+                languageButton.textContent = language.innerText;
+            })
+        }
+    </script>
 </div>
-<!-- 타이틀 -->
-<!-- tv로 즐기세요 ---------------------------------------------------------------->
-<div id="tv" class="container-fluid border-bottom">
+<!--최상단 부분-->
+<!--TV로 즐기세요------------------------------>
+<div class="container-fluid border-bottom">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6 text-center">
-                <h1>TV로 즐기세요.</h1>
-                스마트 TV, PlayStation, Xbox, Chromecast, Apple TV, 블루레이 플레이어 등 다양한 디바이스에서 시청하세요.
+        <div class="contents-wrapper">
+            <div class="text-wrapper">
+                <h1>TV로 즐기세요</h1>
+                <h3>스마트 TV, PlayStation, Xbox, Chromecast, Apple TV, 블루레이 플레이어 등 다양한 디바이스에서 시청하세요.</h3>
             </div>
-            <div class="col-sm-6">
-                <div class="tv-box">
-                    <img src="img/tv.png" alt="tv-box">
-                    <div id="video-box">
-<!--                        <video loop autoplay muted>-->
-<!--                            <source src="img/video.m4v" type="video/mp4">-->
-<!--                        </video>-->
-                    </div>
+            <div class="image-wrapper">
+                <img src="img/tv.png">
+                <div class="image-wrapper video1">
+                    <video loop autoplay muted>
+                        <source src="img/video.m4v" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- TV로 즐기세요 -->
-<!-- 즐겨보는 컨텐츠 --------------------------------------------------------------->
-<div id="contents" class="container-fluid border-bottom">
+<!--TV로 즐겨보세요-->
+<!--즐겨보는 컨텐츠--------------------------->
+<div class="container-fluid border-bottom">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1>즐겨 보는 콘텐츠를 저장해 오프라인으로 시청하세요.</h1>
-                간편하게 저장하고 빈틈없이 즐겨보세요.
-            </div>
-            <div class="col-sm-6">
-                <div id="contents-box">
-                    <img src="img/pic01.jpg" alt="contents-box">
-                    <div id="gif-box">
-                        <img src="img/pic02.png" alt="기묘한이야기">
-<!--                        <div style="float: left;">-->
-<!--                            기묘한 이야기<br>-->
-<!--                            저장중...-->
-<!--                        </div>-->
+        <div class="contents-wrapper">
+            <div class="image-wrapper">
+                <img src="img/pic01.jpg">
+                <div class="image-wrapper description">
+                    <div style="width: 20%; height: 100%; padding: 7px;">
+                        <img src="img/pic02.png" style="max-width: 100%">
                     </div>
+                    <div style="width: 60%; display: flex; align-items: center">
+                        <div style="padding-left: 10px">
+                            <h4>기묘한 이야기</h4>
+                            <p style="color:lightskyblue;"> 저장 중...</p>
+                        </div>
+                    </div>
+                    <div style="width: 20%; padding: 7px; display: flex; align-items: center">
+                        <img src="./img/download-icon.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <h1>즐겨보는 컨텐츠를 저장해 오프라인을 시청하세요.</h1>
+                <h3>간편하게 저장하고 빈틈없이 즐겨보세요.</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!--즐겨보는 컨텐츠-->
+<!--다양한 디바이스---------------------------->
+<div class="container-fluid border-bottom">
+    <div class="container">
+        <div class="contents-wrapper">
+            <div class="text-wrapper">
+                <h1>다양한 디바이스에서 시청하세요.</h1>
+                <h3>각종 영화와 TV 프로그램을 스마트폰, 태블릿, 노트북, TV에서 무제한으로 스트리밍하세요.<br>추가요금이 전혀 없습니다.</h3>
+            </div>
+            <div class="image-wrapper">
+                <img src="img/imac.png">
+                <div class="image-wrapper video2">
+                    <video loop autoplay muted>
+                        <source src="img/video2.m4v" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- 즐겨보는 컨텐츠 -->
-<!-- 다양한 디바이스에서 -------------------------------------------------->
-<div id="device" class="container-fluid border-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1>다양한 디바이스에서<br> 시청하세요.</h1>
-                각종 영화와 TV 프로그램을 스마트폰, 태블릿, 노트북, TV에서 무제한으로 스트리밍하세요. 추가 요금이 전혀 없습니다.
-            </div>
-            <div class="col-sm-6">
-                <div class="tv-box">
-                    <img src="img/imac.png" alt="tv-box">
-                    <div id="video-box2">
-                        <video loop autoplay muted>
-                            <source src="img/video2.m4v" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- 다양한 디바이스에서 -->
-<!-- 자주 묻는 질문 ------------------------------------------------------------------->
-<div id="qna" class="container-fluid border-bottom text-center">
-    <div class="container">
+<!--다양한 디바이스-->
+
+<!--자주 묻는 질문------------------------------------------------->
+<div class="container-fluid border-bottom">
+    <div class="container text-center" style="padding-bottom: 30px">
         <h1 style="padding-bottom: 20px">자주 묻는 질문</h1>
 
         <button class="accordion">넷플릭스란 무엇인가요?</button>
@@ -174,8 +168,8 @@
         </div>
 
         <script>
-            var acc = document.getElementsByClassName("accordion");
-            var i;
+            const acc = document.getElementsByClassName("accordion");
+            let i;
 
             for (i = 0; i < acc.length; i++) {
                 acc[i].addEventListener("click", function () {
@@ -183,61 +177,50 @@
                     if (panel.style.display === 'none') {
                         this.classList.add("active");
                         panel.style.display = 'block';
+                        panel.style.marginBottom = '10px';
+                        this.style.marginBottom = 0;
                     } else {
                         this.classList.remove("active");
                         panel.style.display = 'none'
+                        this.style.marginBottom = '10px'
+                        panel.style.marginBottom = 0;
                     }
                 });
             }
         </script>
     </div>
 </div>
-<!-- 자주묻는 질문 -->
-<!-- Site Map -------------------------------------------------------------------->
-<div id="sitemap" class="container-fluid">
-    <div class="container">
-        질문이 있으신가요? 문의 전화: 00-308-321-0058
-        <div class="row">
-            <div class="col-sm-3">
-                자주 묻는 질문<br>
-                투자정보<br>
-                개인정보<br>
-                속도 테스트<br>
-            </div>
-            <div class="col-sm-3">
-                고객센터<br>
-                입사정보<br>
-                쿠키설정<br>
-                법적고지<br>
-            </div>
-            <div class="col-sm-3">
-                계정<br>
-                Netflix 지원 디바이스<br>
-                회사 정보<br>
-                Netflix 오리지널
-            </div>
-            <div class="col-sm-3">
-                미디어센터<br>
-                이용약관<br>
-                문의하기
-            </div>
+<!--자주 묻는 질문-->
+
+<!--footer---------------------------------->
+<div class="container footer">
+    <p>질문이 있으신가요? 문의전화 : 00-308-321-0058</p>
+    <div class="footer-wrapper">
+        <div class="footer-content">
+            <li>자주 묻는 질문</li>
+            <li>투자정보(IR)</li>
+            <li>개인정보</li>
+            <li>속도 테스트</li>
+        </div>
+        <div class="footer-content">
+            <li>고객 센터</li>
+            <li>입사 정보</li>
+            <li>쿠키 설정</li>
+            <li>법적 고지</li>
+        </div>
+        <div class="footer-content">
+            <li>계정</li>
+            <li>Netflix 지원 디바이스</li>
+            <li>회사 정보</li>
+            <li>Netflix 오리지널</li>
+        </div>
+        <div class="footer-content">
+            <li>미디어 센터</li>
+            <li>이용 약관</li>
+            <li>문의하기</li>
         </div>
     </div>
 </div>
-<!-- Site Map -->
-<!-- footer ----------------------------------------------------------------------->
-<div id="footer" class="container-fluid">
-    <div class="container">
-        <p>Netflix 대한민국</p>
-
-        <div>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0058</div>
-        <div>대표: 레지널드 숀 톰프슨</div>
-        <div>이메일 주소: korea@netflix.com</div>
-        <div>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</div>
-        <div>클라우드 호스팅: Amazon Web Services Inc.</div>
-        <div>공정거래위원회 웹사이트 링크</div>
-    </div>
-</div>
-<!-- footer -->
+<!--footer-->
 </body>
 </html>
