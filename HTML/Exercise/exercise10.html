@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise</title>
+
+    <style>
+        #box-first {
+            /*1. 500X300의 박스*/
+            width: 500px;
+            height: 300px;
+            background-color: red;
+            position: relative;
+            /*3. 테두리 설정*/
+            border: 1px solid black;
+        /*    16. 배경에 이미지*/
+            background-image: url("../img1.jpg");
+            background-size: cover;
+        }
+
+        #box-second {
+            /*2. 200X100의 박스*/
+            width: 200px;
+            height: 100px;
+            /* 4. 2번 박스의 배경색을 파란색으로 지정하세요*/
+            background-color: blue;
+            /* 5. 2번 박스를 1번 박스의 왼쪽 상단에 맞춰보세요*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 6. 2번 박스를 1번 박스의 중앙에 맞춰보세요*/
+            left: 150px;
+            top: 100px;
+            /* 7. 2번 박스를 1번 박스의 왼쪽 중앙에 맞춰보세요*/
+            left: 0px;
+            top: 100px;
+            /* 8. 2번 박스에 CSS 글자를 정 중앙에 넣어보세요*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        /*    17. 2번 박스에 배경에 이미지*/
+            background-image: url("../img1.jpg");
+            background-size: cover;
+        }
+
+        /*9. 1번 박스에 마우스가 올라갔을때 2번 박스 이동*/
+        #box-first:hover #box-second {
+            transform: translateX(200px);
+        }
+
+        /*10. a태그 이용 모서리 둥근 버튼*/
+        #num10 {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            border-radius: 10px;
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+
+        /*11. 태그를 이용해 모서리가 둥근 버튼을 만들어 보세요*/
+        #num11 {
+            background-color: red;
+            color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+
+        /*12. 11번에 마우스 올라갔을때 배경 검은색, 글자 빨간색*/
+        #num10:hover {
+            background-color: black;
+            color: red;
+        }
+
+        /*13. ul태그로 다음과 같이 만들어보세요*/
+        #num13 {
+            list-style: none;
+            padding: 0;
+        }
+
+        /*14. 13번을 이렇게 만들어보세요*/
+        #num13 li {
+            float: left;
+            padding-right: 5px;
+        }
+
+        /*15. 14번 글자에 a 태그르 붙이고 버튼처럼 만들어 보세요*/
+        #num13 li a {
+            display: block;
+            /*width: 50px;*/
+            height: 20px;
+            background-color: lightblue;
+            color: black;
+            text-decoration: none;
+        }
+
+        /*18. 400X300의 박스*/
+        #num18{
+            clear: left;
+            width: 400px;
+            height: 300px;
+            background-color: #8a8a8a;;
+            position: relative;
+        }
+
+    /*    19. 18번 안에 비디오*/
+        #num18 video {
+            width: 400px;
+            z-index: 0;
+            display: block;
+        }
+
+        /*20. 19번 비디오 위에 글자를 넣어보세요*/
+        #num18 #video-text {
+            position: absolute;
+            bottom: 75px;
+            left: 160px;
+            z-index: 9999;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="box-first">
+    <div id="box-second">
+        <span>CSS</span>
+    </div>
+
+</div>
+
+<a id="num10" href="#">10번</a>
+
+<a id="num11">11번</a>
+
+<ul id="num13">
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">Javascript</a></li>
+</ul>
+
+<div id="num18">
+    <video src="../netflix/img/video.m4v" autoplay>
+    </video>
+    <div id="video-text">텍스트입니다.</div>
+</div>
+</body>
+</html>
