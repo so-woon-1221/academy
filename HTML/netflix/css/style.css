@@ -1,0 +1,203 @@
+body {
+    background-color: black;
+    word-break: keep-all;
+}
+
+.container-fluid {
+    color: white;
+    padding: 50px 0;
+    font-size: 20px;
+}
+
+.container-fluid h1 {
+    font-size: 50px;
+}
+
+.border-bottom {
+    border-bottom: 10px solid rgb(57, 57, 57);
+}
+
+nav {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    line-height: 70px;
+}
+
+.btn-danger {
+    background-color: red;
+}
+
+#netflix-logo {
+    fill: red !important;
+}
+
+#title {
+    position: relative;
+    background-image: url("../img/title.jpg");
+    width: 100%;
+    height: 800px;
+
+}
+
+#img-filter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, rgba(30, 30, 30, 0.8), rgba(32, 32, 32, 0), rgba(30, 30, 30, 0.8));
+
+}
+
+.row {
+    height: 10px;
+}
+
+.title-box {
+    margin-top: 300px !important;
+    left: 0;
+    top: 300px !important;
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+.tv-box {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.tv-box img {
+    max-width: 100%;
+}
+
+#video-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*transform: translate(-50%, -50%);*/
+    z-index: 9999;
+    /*background-color: white;*/
+}
+
+#video-box video {
+    width: 100%;
+}
+
+#video-box2 {
+    position: absolute;
+    left: 45%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    z-index: -9999;
+}
+
+#video-box2 video {
+    width: 115%;
+    height: 120%;
+}
+
+#contents-box {
+    width: 100%;
+}
+
+#contents-box img {
+    width: 100%;
+}
+
+#gif-box {
+    border: 3px solid gray;
+    border-radius: 15px;
+    width: 70%;
+    height: 100px;
+    padding: 20px;
+    margin: auto;
+}
+
+#gif-box img {
+    width: 64px;
+    height: 64px;
+    float: left;
+    /*margin-right: 10px;*/
+}
+
+#gif-box::after {
+    background-image: url("../img/download-icon.gif");
+    content: "";
+    display: block;
+    background-size: 100%;
+    width: 48px;
+    height: 60px;
+    float: right;
+}
+
+
+.accordion {
+    background-color: #58595B;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #5F5F5F;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    margin: 0;!important;
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+#qna .container {
+    width: 900px !important;
+}
+
+#qna .panel {
+    border-radius: 0;
+    color: rgb(78, 77, 77) !important;
+    font-size: 25px;
+}
+
+#sitemap .col-sm-3 {
+    line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    #title form {
+        width: 300px;
+        margin: auto;
+    }
+
+    #qna .container {
+        width: 90% !important;
+    }
+
+    .panel {
+        display: none;
+    }
+}

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Netflix</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+<!--최상단 부분-------------------->
+<div class="container-fluid text-center border-bottom" id="title">
+    <div class="title-filter"></div>
+    <div class="title-description">
+        <img src="img/logo.svg">
+        <div class="btn-group" id="buttonGroup">
+            <button id="languageButton" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                한국어
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">한국어</a> </li>
+                <li><a href="#">영어</a> </li>
+            </ul>
+        </div>
+        <div class="title-text">
+            <h1>영화, TV 프로그램을 무제한으로.</h1>
+            <h3>다양한 디바이스에서 시청하세요. 언제든지 해지하실 수 있습니다.</h3>
+            <h4>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</h4>
+            <form class="title-form">
+                <input id="email" name="email" class="title-form-input">
+                <button type="submit" id="start" name="start" class="title-form-button">시작하기 ></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let languageGroup = document.getElementById('buttonGroup');
+        let languageButton = document.getElementById('languageButton');
+        let languageList = languageGroup.querySelectorAll('a');
+
+
+        for (let language of languageList) {
+            language.addEventListener('click', function () {
+                languageButton.textContent = language.innerText;
+            })
+        }
+    </script>
+</div>
+<!--최상단 부분-->
+<!--TV로 즐기세요------------------------------>
+<div class="container-fluid border-bottom">
+    <div class="container">
+        <div class="contents-wrapper">
+            <div class="text-wrapper">
+                <h1>TV로 즐기세요</h1>
+                <h3>스마트 TV, PlayStation, Xbox, Chromecast, Apple TV, 블루레이 플레이어 등 다양한 디바이스에서 시청하세요.</h3>
+            </div>
+            <div class="image-wrapper">
+                <img src="img/tv.png">
+                <div class="image-wrapper video1">
+                    <video loop autoplay muted>
+                        <source src="img/video.m4v" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--TV로 즐겨보세요-->
+<!--즐겨보는 컨텐츠--------------------------->
+<div class="container-fluid border-bottom">
+    <div class="container">
+        <div class="contents-wrapper">
+            <div class="image-wrapper">
+                <img src="img/pic01.jpg">
+                <div class="image-wrapper description">
+                    <div style="width: 20%; height: 100%; padding: 7px;">
+                        <img src="img/pic02.png" style="max-width: 100%">
+                    </div>
+                    <div style="width: 60%; display: flex; align-items: center">
+                        <div style="padding-left: 10px">
+                            <h4>기묘한 이야기</h4>
+                            <p style="color:lightskyblue;"> 저장 중...</p>
+                        </div>
+                    </div>
+                    <div style="width: 20%; padding: 7px; display: flex; align-items: center">
+                        <img src="./img/download-icon.gif">
+                    </div>
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <h1>즐겨보는 컨텐츠를 저장해 오프라인을 시청하세요.</h1>
+                <h3>간편하게 저장하고 빈틈없이 즐겨보세요.</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!--즐겨보는 컨텐츠-->
+<!--다양한 디바이스---------------------------->
+<div class="container-fluid border-bottom">
+    <div class="container">
+        <div class="contents-wrapper">
+            <div class="text-wrapper">
+                <h1>다양한 디바이스에서 시청하세요.</h1>
+                <h3>각종 영화와 TV 프로그램을 스마트폰, 태블릿, 노트북, TV에서 무제한으로 스트리밍하세요.<br>추가요금이 전혀 없습니다.</h3>
+            </div>
+            <div class="image-wrapper">
+                <img src="img/imac.png">
+                <div class="image-wrapper video2">
+                    <video loop autoplay muted>
+                        <source src="img/video2.m4v" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--다양한 디바이스-->
+
+<!--자주 묻는 질문------------------------------------------------->
+<div class="container-fluid border-bottom">
+    <div class="container text-center" style="padding-bottom: 30px">
+        <h1 style="padding-bottom: 20px">자주 묻는 질문</h1>
+
+        <button class="accordion">넷플릭스란 무엇인가요?</button>
+        <div class="panel" style="display: none">
+            <p>넷플릭스는 각종 수상 경력에 빛나는 TV 프로그램, 영화, 애니메이션, 다큐멘터리 등 다양한 콘텐츠를 인터넷 연결이 가능한 수천 종의 디바이스에서 시청할 수 있는 스트리밍
+                서비스입니다.</p>
+
+            <p>저렴한 월 요금으로 일체의 광고 없이 원하는 시간에 원하는 만큼 즐길 수 있습니다. 무궁무진한 콘텐츠가 준비되어 있으며 매주 새로운 TV 프로그램과 영화가 제공됩니다.</p>
+        </div>
+
+        <button class="accordion">넷플릭스 요금은 얼마인가요?</button>
+        <div class="panel" style="display: none">
+            <p>스마트폰, 태블릿, 스마트 TV, 노트북, 스트리밍 디바이스 등 다양한 디바이스에서 월정액 요금 하나로 넷플릭스를 시청하세요. 멤버십 요금은 월 9,500원부터 14,500원까지
+                다양합니다. 추가 비용이나 약정이 없습니다.</p>
+        </div>
+
+        <button class="accordion">어디에서 시청할 수 있나요?</button>
+        <div class="panel" style="display: none">
+            <p>다양한 디바이스에서 언제 어디서나 시청할 수 있습니다. 넷플릭스 계정으로 로그인하면 PC에서 netflix.com을 통해 바로 시청할 수 있으며, 인터넷이 연결되어 있고 넷플릭스 앱을
+                지원하는 디바이스(스마트 TV, 스마트폰, 태블릿, 스트리밍 미디어 플레이어, 게임 콘솔 등)에서도 언제든지 시청할 수 있습니다.
+
+                iOS, Android, Windows 10용 앱에서는 좋아하는 프로그램을 저장할 수도 있습니다. 저장 기능을 이용해 이동 중이나 인터넷에 연결할 수 없는 곳에서도 시청하세요. 넷플릭스는
+                어디서든 함께니까요.</p>
+        </div>
+
+        <button class="accordion">멤버십을 해지하려면 어떻게 하나요?</button>
+        <div class="panel" style="display: none">
+            <p>넷플릭스는 부담 없이 간편합니다. 성가신 계약도, 약정도 없으니까요. 멤버십 해지도 온라인에서 클릭 두 번이면 완료할 수 있습니다. 해지 수수료도 없으니 원할 때 언제든 계정을 시작하거나
+                종료하세요.</p>
+        </div>
+
+        <button class="accordion">넷플릭스에서 어떤 컨텐츠를 시청할 수 있나요?</button>
+        <div class="panel" style="display: none">
+            <p>넷플릭스는 장편 영화, 다큐멘터리, TV 프로그램, 애니메이션, 각종 상을 수상한 넷플릭스 오리지널 등 수많은 콘텐츠를 확보하고 있습니다. 마음에 드는 콘텐츠를 원하는 시간에 원하는 만큼
+                시청하세요.</p>
+        </div>
+
+        <script>
+            const acc = document.getElementsByClassName("accordion");
+            let i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    const panel = this.nextElementSibling;
+                    if (panel.style.display === 'none') {
+                        this.classList.add("active");
+                        panel.style.display = 'block';
+                        panel.style.marginBottom = '10px';
+                        this.style.marginBottom = 0;
+                    } else {
+                        this.classList.remove("active");
+                        panel.style.display = 'none'
+                        this.style.marginBottom = '10px'
+                        panel.style.marginBottom = 0;
+                    }
+                });
+            }
+        </script>
+    </div>
+</div>
+<!--자주 묻는 질문-->
+
+<!--footer---------------------------------->
+<div class="container footer">
+    <p>질문이 있으신가요? 문의전화 : 00-308-321-0058</p>
+    <div class="footer-wrapper">
+        <div class="footer-content">
+            <li>자주 묻는 질문</li>
+            <li>투자정보(IR)</li>
+            <li>개인정보</li>
+            <li>속도 테스트</li>
+        </div>
+        <div class="footer-content">
+            <li>고객 센터</li>
+            <li>입사 정보</li>
+            <li>쿠키 설정</li>
+            <li>법적 고지</li>
+        </div>
+        <div class="footer-content">
+            <li>계정</li>
+            <li>Netflix 지원 디바이스</li>
+            <li>회사 정보</li>
+            <li>Netflix 오리지널</li>
+        </div>
+        <div class="footer-content">
+            <li>미디어 센터</li>
+            <li>이용 약관</li>
+            <li>문의하기</li>
+        </div>
+    </div>
+</div>
+<!--footer-->
+</body>
+</html>
