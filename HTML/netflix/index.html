@@ -81,7 +81,7 @@
 <div class="container-fluid border-bottom">
     <div class="container">
         <div class="contents-wrapper">
-            <div class="image-wrapper">
+            <div class="image-wrapper" id="mobile-content1" style="display: block">
                 <img src="img/pic01.jpg">
                 <div class="image-wrapper description">
                     <div style="width: 20%; height: 100%; padding: 7px;">
@@ -102,8 +102,45 @@
                 <h1>즐겨보는 컨텐츠를 저장해 오프라인을 시청하세요.</h1>
                 <h3>간편하게 저장하고 빈틈없이 즐겨보세요.</h3>
             </div>
+            <div class="image-wrapper" id="mobile-content2" style="display: none">
+                <img src="img/pic01.jpg">
+                <div class="image-wrapper description">
+                    <div style="width: 20%; height: 100%; padding: 7px;">
+                        <img src="img/pic02.png" style="max-width: 100%">
+                    </div>
+                    <div style="width: 60%; display: flex; align-items: center">
+                        <div style="padding-left: 10px">
+                            <h4>기묘한 이야기</h4>
+                            <p style="color:lightskyblue;"> 저장 중...</p>
+                        </div>
+                    </div>
+                    <div style="width: 20%; padding: 7px; display: flex; align-items: center">
+                        <img src="./img/download-icon.gif">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        const content1 = document.getElementById('mobile-content1');
+        const content2 = document.getElementById('mobile-content2');
+
+        window.onload = () => {
+            if (window.innerWidth <= 768) {
+                content1.style.display = 'none';
+                content2.style.display = 'block';
+            }
+        }
+        window.addEventListener('resize', function () {
+            if (window.innerWidth <= 768) {
+                content1.style.display = 'none';
+                content2.style.display = 'block';
+            } else {
+                content2.style.display = 'none';
+                content1.style.display = 'block';
+            }
+        })
+    </script>
 </div>
 <!--즐겨보는 컨텐츠-->
 <!--다양한 디바이스---------------------------->
