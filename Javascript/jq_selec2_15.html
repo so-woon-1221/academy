@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+        .go-left {
+            transform: translateX(1000px);
+        }
+
+        #move-text {
+            transition: all 5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<script>
+    $(function () {
+        const result_1 = $("#inner_1 p").eq(0).is(":visible");
+        console.log(result_1);
+
+        const result_2 = $('#inner_1 p').eq(1).is(':visible');
+        console.log(result_2);
+
+        const result_3 = $('#chk1').is(':checked');
+        console.log(result_3)
+
+        const result_4 = $('#chk2').is(':checked');
+        console.log(result_4)
+
+        $('#btn1').click(function () {
+            // $('#move-text').toggleClass('go-left')
+            $('#move-text').removeClass('animate__bounce').addClass('animate__fadeINUP')
+        })
+    })
+</script>
+
+<div id="outer_wrap" style="height: 1000px">
+    <h1>is()</h1>
+    <section id="inner_1">
+        <h2>문단 태그 영역</h2>
+        <p>내용1</p>
+        <p style="display:none">내용2</p>
+    </section>
+
+    <section id="inner_2">
+        <h2>폼 태그 영역</h2>
+        <p>
+            <input type="checkbox" name="chk1" id="chk1" checked>
+            <label for="chk1">체크1</label>
+            <input type="checkbox" name="chk2" id="chk2">
+            <label for="chk2">체크2</label>
+        </p>
+    </section>
+</div>
+
+<input type="button" id="btn1" value="버튼">
+<p id="move-text" class="animate__animated">움직이는 글씨</p>
+
+<!--<input type="checkbox" id="checkbox" style="height: 100px; background-color: red" class="animate__animated">-->
+<!--<label for="checkbox">체크박스스</label>-->
+
+<div id="checkbox" style="height: 100px; background-color: red; transform: translateY(100px); transition: all 0.4s ease" class="animate__animated">
+
+<script>
+    const checkBox = document.getElementById('checkbox');
+    checkBox.setAttribute('checked', 'checked')
+
+    window.addEventListener('load', () => {
+        if (window.innerHeight > checkBox.getBoundingClientRect().top) {
+            // checkBox.classList.add('animated__fadeInUp')
+            checkBox.style.opacity = '1';
+            checkBox.style.transform = 'none'
+            // alert('만남')
+        }
+    })
+
+    window.addEventListener('scroll', () => {
+        // const checkBoxPre = checkBox.previousElementSibling;
+        // console.log(document.documentElement.clientHeight+window.scrollY)
+        // console.log(checkBox.offsetTop)
+        if (window.innerHeight > checkBox.getBoundingClientRect().top + 10) {
+            // checkBox.classList.add('animated__fadeInUp')
+            checkBox.style.opacity = '1';
+            checkBox.style.transform = 'none'
+            // alert('만남')
+        }
+    })
+</script>
+</body>
+</html>

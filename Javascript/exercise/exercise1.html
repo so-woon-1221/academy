@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise1</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form name="study">
+        <input type="text" name="name" placeholder="이름">
+        <input type="text" name="korean" placeholder="국어">
+        <input type="text" name="english" placeholder="영어">
+        <input type="text" name="math" placeholder="수학">
+        <input type="text" name="average" placeholder="'평균">
+        <button type="button" id="getAverage">평균구하기</button>
+    </form>
+
+    <button id="btn1">버튼1</button>
+    <br>
+    <button id="btn2">버튼2</button>
+    <br>
+    <button id="btn3">버튼3</button>
+</div>
+
+<script>
+    const studyForm = document.forms.study;
+    const name = studyForm.name;
+    const korean = studyForm.korean;
+    const english = studyForm.english;
+    const math = studyForm.math;
+    const average = studyForm.average;
+
+    const getAverageButton = document.getElementById('getAverage');
+
+    const student = {
+        getAverage(korea, math, english) {
+            let average = (+korea + +math + +english) / 3;
+            if (average >= 90) return 'A'
+            if (average >= 80) return 'B'
+            if (average >= 70) return 'C'
+            if (average >= 60) return 'D'
+            if (average >= 50) return 'E'
+            return 'F'
+        }
+    };
+
+    getAverageButton.addEventListener('click', () => {
+        student.name = name.value;
+        student.korean = korean.value;
+        student.math = math.value;
+        student.english = english.value;
+        average.value = student.name + "의 성적은 " + student.getAverage(student.korean, student.math, student.english);
+
+        console.log(student)
+    })
+
+    $(function () {
+        $('#btn1').click(function () {
+            $('#btn1').css('background-color', 'red');
+        })
+        $('#btn3').click(function () {
+            $('#btn3').css('display', 'none')
+        })
+    })
+
+    document.getElementById('btn2').addEventListener('click', function () {
+            if (this.classList.contains('clicked')) {
+                this.classList.remove('clicked');
+                this.style.transform = 'translateX(0)'
+                return;
+            }
+            this.classList.add('clicked')
+            this.style.transform = 'translateX(100px)'
+        }
+    )
+</script>
+</body>
+</html>
