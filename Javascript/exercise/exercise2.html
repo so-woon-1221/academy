@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise2</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+<div style="width: 100%; height: 500px">
+    <img src="image/image1.JPG" style="height: 100%;" id="image">
+    <br>
+    <button style="width: 50px; height: 50px" id="prev-button">prev</button>
+    <button style="width: 50px; height: 50px" id="next-button">next</button>
+</div>
+
+<script>
+    const images = ['image/image1.JPG', 'image/image2.JPG', 'image/image3.JPG', 'image/image4.JPG']
+    const image = $('#image');
+    let i = 0;
+    $(function () {
+        $('#prev-button').on('click', function () {
+            if (i === 0) {
+                i = 3;
+                $('#image').attr('src', images[i]);
+                // console.log(images[3])
+            } else {
+                i--;
+                $('#image').attr('src', images[i]);
+            }
+            console.log($('#image').attr('src'));
+        })
+        $('#next-button').on('click', function () {
+            if (i === 3) {
+                i = 0;
+                $('#image').attr('src', images[i]);
+                // console.log(images[3])
+            } else {
+                i++;
+                $('#image').attr('src', images[i]);
+            }
+            console.log($('#image').attr('src'));
+        })
+    })
+</script>
+</body>
+</html>
