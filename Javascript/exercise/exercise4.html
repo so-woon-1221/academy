@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>side bar</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <style>
+        /** {*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*}*/
+
+        #menu {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 500px;
+            left: -500px;
+            background-color: yellowgreen;
+            display: block;
+            transition: all 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        #menu.active {
+            width: 500px;
+            left:0;
+            transition: all 1s ease;
+        }
+
+    </style>
+
+    <script>
+        $(function () {
+            const menu = $('#menu')
+            $('#menu-button').on('click', () => {
+                menu.addClass('active');
+            })
+
+            $('#cancel').on('click', ()=> {
+                menu.removeClass('active')
+            })
+        })
+    </script>
+</head>
+<body>
+<div>
+    <button id="menu-button">메뉴</button>
+    <p>버튼을 누르면 메뉴가 나옵니다.</p>
+    <div id="menu">
+        <button id="cancel" style="position: absolute; left: 400px; top:20px;">취소</button>
+    </div>
+</div>
+</body>
+</html>
