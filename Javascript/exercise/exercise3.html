@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        .animation_canvas {
+            overflow: hidden;
+            position: relative;
+            width: 800px;
+            height: 1000px;
+        }
+
+        /* Slider Panel */
+        .slider_panel {
+            width: 4000px;
+            position: relative;
+        }
+
+        .slider {
+            position: relative;
+            float: left;
+        }
+
+        .slider_caption {
+            position: absolute;
+            background-color: rgba(255,255,255,0.2);
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            font-size: 30px;
+        }
+        .slider_image {
+            float: left;
+            width: 800px;
+            height: 1000px;
+        }
+
+        /* Control Panel */
+        .control_panel {
+            position: absolute;
+            bottom: 10px;;
+            left: 370px;
+            overflow: hidden;
+            color: white;
+        }
+
+        .dot {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .active {
+            font-size: 50px;
+        }
+
+        .left_arrow_panel {
+            position: absolute;
+            left: 30px;
+            top: 470px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);;
+        }
+
+        .right_arrow_panel {
+            position: absolute;
+            right: 30px;
+            top: 470px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.4);;
+        }
+
+        .arrow {
+            font-size: 50px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            let index = 0;
+
+            // 슬라이더를 움직여주는 함수
+            function moveSlider(index) {
+                var willMoveLeft = -(index * 800);
+                $('.slider_panel').animate({left: willMoveLeft}, 1000);
+            };
+
+            $(".dot").click(function () {
+                moveSlider($(this).index());
+                index = $(this).index();
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+            });
+
+            $('.left_arrow_panel .arrow').click(() => {
+                if (index == 0) {
+                    index = 5;
+                }
+                moveSlider(index - 1);
+                $('.dot').eq(index - 1).addClass('active').siblings().removeClass('active');
+                index -= 1;
+            })
+
+            $('.right_arrow_panel .arrow').click(() => {
+                if (index === 4) index = -1;
+                $('.slider_panel').animate({left: -((index + 1) * 800)}, 1000);
+                $('.dot').eq(index + 1).addClass('active').siblings().removeClass('active');
+                index += 1;
+            })
+
+            let auto = '';
+
+            let button = document.getElementById('auto');
+            $('#auto').click(function () {
+                if (auto) {
+                    button.innerText = 'play';
+                    clearInterval(auto);
+                    auto = '';
+                    return;
+                } else {
+                    button.innerText = 'stop'
+                    auto = setInterval(() => {
+                        if (index === 4) index = -1;
+                        $('.slider_panel').animate({left: -((index + 1) * 800)}, 1000);
+                        $('.dot').eq(index + 1).addClass('active').siblings().removeClass('active');
+                        index += 1;
+                    }, 2000)
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+<div class="animation_canvas">
+    <div class="slider_panel">
+        <div class="slider">
+            <img src="img/pic1.jpg" class="slider_image"/>
+            <div class="slider_caption">Image 1</div>
+        </div>
+        <div class="slider">
+            <img src="img/pic2.jpg" class="slider_image"/>
+            <div class="slider_caption">Image 1</div>
+        </div>
+        <div class="slider">
+            <img src="img/pic3.jpg" class="slider_image"/>
+            <div class="slider_caption">Image 1</div>
+        </div>
+        <div class="slider">
+            <img src="img/pic4.jpg" class="slider_image"/>
+            <div class="slider_caption">Image 1</div>
+        </div>
+        <div class="slider">
+            <img src="img/pic5.jpg" class="slider_image"/>
+            <div class="slider_caption">Image 1</div>
+        </div>
+    </div>
+
+    <div class="control_panel" style="text-align:center">
+        <span class="dot active">*</span>
+        <span class="dot">*</span>
+        <span class="dot">*</span>
+        <span class="dot">*</span>
+        <span class="dot">*</span>
+    </div>
+
+    <div class="control_panel" style="text-align:center">
+        <button id="auto">play</button>
+    </div>
+
+    <div class="left_arrow_panel">
+        <span class="arrow">&lAarr;</span>
+    </div>
+
+    <div class="right_arrow_panel">
+        <span class="arrow">&rAarr;</span>
+    </div>
+</div>
+</body>
+</html>
