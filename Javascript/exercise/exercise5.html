@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+        .left-box {
+            background-color: wheat;
+            width: 400px;
+            height: 400px;
+            opacity: 0;
+            /*transition: all 0.4s ease;*/
+            /*transform: translateX(-50px);*/
+        }
+
+        .right-box {
+            background-color: wheat;
+            width: 400px;
+            height: 400px;
+            opacity: 0;
+            transition: all 0.4s ease;
+            /*transform: translateX(150px);*/
+        }
+
+        .left-box.active {
+            opacity: 1;
+            /*transform: translateX(150px);*/
+        }
+
+        .right-box.active {
+            opacity: 1;
+            /*transform: translateX(-50px);*/
+        }
+
+
+    </style>
+</head>
+<body>
+<div style="background-color: yellowgreen; width: 100%; height: 1000px"></div>
+<div style="width: 100%; display: flex">
+    <div style="width: 50%; padding: 100px">
+        <div class="left-box animate__animated" id="left-box">a</div>
+    </div>
+    <div style="width: 50%; padding: 100px">
+        <div class="right-box animate__animated" id="right-box">b</div>
+    </div>
+</div>
+
+<script>
+    const leftBox = document.getElementById('left-box');
+    const rightBox = document.getElementById('right-box');
+
+    window.addEventListener('scroll', () => {
+        let left = leftBox.getBoundingClientRect();
+        let right = rightBox.getBoundingClientRect();
+        if (window.innerHeight > left.top + 200) {
+            leftBox.classList.add('animate__bounceInLeft');
+            rightBox.classList.add('animate__bounceInRight');
+            leftBox.classList.add('active')
+            rightBox.classList.add('active')
+        }
+    })
+</script>
+</body>
+</html>
