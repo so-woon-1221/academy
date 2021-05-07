@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>webpos-do</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("zzzzzzzzzzzz");
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    id: "",
+                    name: "",
+                    address: ""
+                },
+                methods: {
+                    getMember: function () {
+                        $.ajax({
+                            url: "http://janus1221.ivyro.net/ajaxDB.php?id=sowoon",
+                            dataType: "json",
+                            success: function (data) {
+                                console.log(data);
+                                app.id = data.id;
+                                app.name = data.name;
+                                app.address = data.address;
+                            }
+                        });
+                    },
+                    getMemberById: function () {
+                        const id = document.getElementById('memberId').value;
+                        $.ajax({
+                            url: `http://janus1221.ivyro.net/ajaxDB.php?id=${id}`,
+                            dataType: "json",
+                            success: function (data) {
+                                console.log(data);
+                                app.id = data.id;
+                                app.name = data.name;
+                                app.address = data.address;
+                                alert(`id는 ${id}, name은 ${data.name}, address는 ${data.address}`)
+                            },
+                            error: function () {
+                                alert('검색결과 없음');
+                            }
+                        })
+                    },
+                    updateMember: function () {
+                        console.log("==================");
+                        const frmData = $("#frm1").serialize();//폼에 입력한 값 데이터화
+                        $.ajax({
+                            type: "POST",
+                            url: "http://janus1221.ivyro.net/memberUpdate.php",
+                            data: frmData,
+                            success: function (res) {
+                                if (res) {
+                                    console.log(res.message);
+                                    $("#message").html(res.message);
+                                }
+                            }
+                        });
+                    },
+                    logIn: function () {
+                        const id = document.getElementById('memberId').value;
+                        const name = document.getElementById('memberName').value;
+                        $.ajax({
+                            url: `http://janus1221.ivyro.net/ajaxDB.php?id=${id}`,
+                            dataType: "json",
+                            success: function (data) {
+                                console.log(data);
+                                if (name === data.name) {
+                                    if (confirm('로그인 되었습니다.')) {
+                                        location.href = 'https://naver.com';
+                                    }
+                                } else {
+                                    alert('name을 확인하세요');
+                                }
+                            },
+                            error: function () {
+                                alert('회원 아님');
+                            }
+                        })
+                    }
+                }
+            });
+            app.getMember();
+        });
+    </script>
+</head>
+
+<body>
+<div id='app'>
+    <form id="frm1">
+        <input type="text" name="id" v-model="id" id="memberId"><br>
+        name <input type="text" name="name" v-model="name" id="memberName"><br>
+        address <input type="text" name="address" v-model="address"><br>
+        password <input type="password" name="password"><br>
+        <p>아이디와 name이 등록된 정보와 같다면 로그인됩니다.</p>
+        <input id="modify" type="button" v-on:click="updateMember" value="회원정보수정">
+        <input id="search" type="button" v-on:click="getMemberById" value="회원정보 검색">
+        <input id="login" type="button" v-on:click="logIn" value="로그인">
+    </form>
+    <div id="message"></div>
+</div>
+</body>
+</html>
