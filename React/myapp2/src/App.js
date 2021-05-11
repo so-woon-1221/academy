@@ -1,10 +1,14 @@
 import React from 'react';
 import EventPractice from "./EventPractice";
+import MyComponent from "./MyComponent";
+import AjaxComponent from "./AjaxComponent";
 
 const App = () => {
     return (
         <div>
-          <EventPractice/>
+            <EventPractice/>
+            <MyComponent name={'gg'}/>
+            <AjaxComponent/>
         </div>
     );
 };
